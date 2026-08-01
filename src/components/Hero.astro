@@ -3,41 +3,35 @@ import { COMPANY_INFO } from '../data/jiyaData';
 import HeroSlider from './HeroSlider.astro';
 ---
 
-<section class="relative bg-slate-900 text-white overflow-hidden border-b border-slate-800 lg:min-h-[620px] flex items-center">
+<section class="relative bg-slate-900 text-white overflow-hidden border-b border-slate-800 py-10 sm:py-14 lg:py-20 flex items-center">
   
   <!-- Subtle Grid Pattern Background -->
   <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none z-0"></div>
 
-  <!-- Right 50% Horizontal Viewport Image Slider with Left Edge Fade -->
-  <div class="w-full lg:w-1/2 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 h-[380px] sm:h-[460px] lg:h-full z-10">
-    <HeroSlider />
-  </div>
-
-  <!-- Left Content (Z-20 over dark section background) -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full py-12 lg:py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       
       <!-- Left Column: Content & Key Metrics -->
-      <div class="lg:col-span-6 space-y-6 max-w-2xl">
+      <div class="lg:col-span-6 space-y-6">
         
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight font-heading">
           Industrial Material Handling Equipment &amp; <span class="text-yellow-400">Heavy Duty Casters</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+        <p class="text-sm sm:text-base lg:text-lg text-slate-300 font-normal leading-relaxed">
           Authorized B2B manufacturer, stockist &amp; maintenance partner for <strong class="text-yellow-400 font-semibold">Hand Pallet Trucks, Hydraulic Stackers, Caster Wheels, Drum Lifters,</strong> and <strong class="text-white">Forklift OEM Spare Parts</strong>. Engineered for continuous plant operations.
         </p>
 
         <!-- CTA Buttons -->
         <div class="pt-2 flex flex-wrap items-center gap-3">
-          <a href="/contact" class="b2b-btn-amber text-sm font-bold shadow-lg">
+          <a href="/contact" class="b2b-btn-amber text-xs sm:text-sm font-bold shadow-lg">
             <span>Request B2B Quotation</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </a>
 
-          <a href="/products" class="b2b-btn-outline text-sm font-semibold border-slate-700 text-white bg-slate-800/80 hover:bg-slate-800 hover:text-amber-400">
+          <a href="/products" class="b2b-btn-outline text-xs sm:text-sm font-semibold border-slate-700 text-white bg-slate-800/80 hover:bg-slate-800 hover:text-amber-400">
             <span>Browse Catalog</span>
           </a>
 
@@ -55,23 +49,28 @@ import HeroSlider from './HeroSlider.astro';
         <!-- Key Metrics Strip -->
         <div class="pt-6 mt-4 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
           <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-amber-400 font-heading">15+</div>
-            <div class="text-xs text-slate-400 font-medium">Years Experience</div>
+            <div class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-amber-400 font-heading">15+</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">Years Experience</div>
           </div>
           <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-white font-heading">5,000+</div>
-            <div class="text-xs text-slate-400 font-medium">Units Dispatched</div>
+            <div class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-heading">5,000+</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">Units Dispatched</div>
           </div>
           <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-amber-400 font-heading">100%</div>
-            <div class="text-xs text-slate-400 font-medium">GST ITC Compliant</div>
+            <div class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-amber-400 font-heading">100%</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">GST ITC Compliant</div>
           </div>
           <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-white font-heading">GIDC Vapi</div>
-            <div class="text-xs text-slate-400 font-medium">Manufacturing Hub</div>
+            <div class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-heading">GIDC Vapi</div>
+            <div class="text-[11px] sm:text-xs text-slate-400 font-medium">Manufacturing Hub</div>
           </div>
         </div>
 
+      </div>
+
+      <!-- Right Column: Responsive Hero Slider Card -->
+      <div class="lg:col-span-6 w-full flex justify-center pt-4 lg:pt-0">
+        <HeroSlider />
       </div>
 
     </div>

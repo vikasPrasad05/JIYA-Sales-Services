@@ -42,14 +42,14 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     id: "material-handling",
     title: "Material Handling Equipments",
     description: "Hand Pallet Trucks (550mm/685mm, SS 304, Weighing, Scissor), Hydraulic Stackers (Manual, Semi/Fully Electric), Reel Stackers & Scissor Tables.",
-    image: "/images/products/16.jpeg",
+    image: "/images/products/hpt_yellow_550_clean.png",
     itemCount: 16
   },
   {
     id: "trolleys-cranes",
     title: "Platform Trolleys, Cranes & Storage",
     description: "Goods Mesh Trolleys, MS & SS Platform Trolleys, Hydraulic Floor Cranes, Dock Levelers, Stair Climbing Carts & Storage Bins.",
-    image: "/images/products/5.jpeg",
+    image: "/images/products/ms_platform_trolley_blue.png",
     itemCount: 16
   },
   {
@@ -82,7 +82,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["550mm x 1150mm"],
     features: ["Heavy Duty Steel Frame", "Leak-proof Monoblock Pump", "Tandem PU / Nylon Wheels", "Overload Relief Valve"],
     applications: ["Warehouses", "Factories", "Logistics Hubs", "Loading Bays"],
-    image: "/images/products/16.jpeg",
+    image: "/images/products/hpt_yellow_550_clean.png",
     isPopular: true
   },
   {
@@ -95,7 +95,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["685mm x 1220mm"],
     features: ["Wide Span Forks", "Ergonomic Rubber Handle", "Precision Sealed Bearings", "Powder Coated Finish"],
     applications: ["Pharma Plants", "Export Packaging", "Textile Mills", "Chemical Plants"],
-    image: "/images/products/15.jpeg",
+    image: "/images/products/hpt_yellow_685_clean.png",
     isPopular: true
   },
   {
@@ -108,7 +108,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["550mm / 685mm Width"],
     features: ["Digital LCD Indicator Display", "Tare & Zero Weight Buttons", "High Precision Load Cells", "Rechargeable Battery"],
     applications: ["Dispatch Depots", "Freight Forwarding", "Raw Material Inward"],
-    image: "/images/products/14.jpeg"
+    image: "/images/products/hpt_yellow_550_clean.png"
   },
   {
     id: "mh-jss-4",
@@ -120,7 +120,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["550mm x 1150mm", "685mm x 1220mm"],
     features: ["Full SS 304 Frame & Pump", "Corrosion Resistant", "Washdown Safe", "Hygienic Nylon Wheels"],
     applications: ["Pharma Cleanrooms", "Food & Beverage", "Chemical Processing"],
-    image: "/images/products/13.jpeg",
+    image: "/images/products/hpt_ss304_clean.png",
     isPopular: true
   },
   {
@@ -133,7 +133,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Max Lift: 800mm"],
     features: ["Automatic Rear Lock Stabilisers", "Dual Cylinder Lift Pump", "Ergonomic Workstation Height"],
     applications: ["Assembly Lines", "Sorting Stations", "Packaging Bay"],
-    image: "/images/products/12.jpeg"
+    image: "/images/products/ss_hydraulic_scissor.png"
   },
   {
     id: "mh-jss-6",
@@ -145,7 +145,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Compact Chassis"],
     features: ["Lithium / Lead-Acid Battery", "Creep Speed Control", "Electromagnetic Emergency Brake"],
     applications: ["Distribution Centers", "Logistics Hubs", "Multi-shift Warehouses"],
-    image: "/images/products/11.jpeg"
+    image: "/images/products/hpt_yellow_550_clean.png"
   },
   {
     id: "mh-jss-7",
@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: 1.6m", "2.0m", "3.0m"],
     features: ["High Tensile C-Channel Mast", "Foot Brake Wheel Lock", "Adjustable Tine Width"],
     applications: ["Warehouse Racking", "Truck Loading", "Small Plants"],
-    image: "/images/products/10.jpeg",
+    image: "/images/products/hydraulic_stacker_yellow.png",
     isPopular: true
   },
   {
@@ -170,7 +170,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: 1.6m - 3.5m"],
     features: ["Heavy Duty Electric Lift Motor", "Built-in Battery Charger", "Key Control Switch"],
     applications: ["Racking Warehouses", "Manufacturing Plants"],
-    image: "/images/products/9.jpeg"
+    image: "/images/products/hydraulic_stacker_yellow.png"
   },
   {
     id: "mh-jss-9",
@@ -182,7 +182,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: up to 4.5m"],
     features: ["Curtis AC Drive System", "Proportional Lifting Control", "Turtle Speed Mode"],
     applications: ["High Density Warehouses", "Automotive Plants"],
-    image: "/images/products/8.jpeg"
+    image: "/images/products/hydraulic_stacker_yellow.png"
   },
   {
     id: "mh-jss-10",
@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: 1.6m - 2.5m"],
     features: ["V-Cradle Roll Attachment", "Hydraulic Lift Pump", "Safety Load Guard"],
     applications: ["Paper Mills", "Textile & Fabric Units", "Cable Manufacturers"],
-    image: "/images/products/7.jpeg"
+    image: "/images/products/hydraulic_stacker_yellow.png"
   },
   {
     id: "mh-jss-11",
@@ -206,7 +206,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Fits Standard 210L Steel & Plastic Drums"],
     features: ["360° Worm Gear Rotation", "Automatic Rim Clamp", "Hydraulic Foot Pump"],
     applications: ["Chemical Plants", "Pharma Dosing", "Paint Batching"],
-    image: "/images/products/6.jpeg",
+    image: "/images/products/drum_lifter_tilter.png",
     isPopular: true
   },
   {
