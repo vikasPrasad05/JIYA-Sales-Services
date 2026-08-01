@@ -1,0 +1,33 @@
+---
+import { COMPANY_INFO } from '../data/jiyaData';
+
+const whatsappUrl = `https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent(COMPANY_INFO.whatsappMsg)}`;
+---
+
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3.5">
+  
+  <!-- WhatsApp Floating Button -->
+  <a 
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Direct WhatsApp Chat with JIYA Sales & Services"
+    class="w-16 h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-white group"
+  >
+    <svg class="w-9 h-9 fill-current" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.461c-1.926 0-3.725-.515-5.285-1.415l-.379-.222-3.928 1.03 1.048-3.828-.247-.394C2.33 15.452 1.737 13.567 1.738 11.583 1.74 5.922 6.327 1.335 11.987 1.335c2.742 0 5.319 1.068 7.258 3.01 1.939 1.943 3.004 4.522 3.002 7.265-.002 5.661-4.588 10.248-10.25 10.248m8.318-18.566C18.172 1.068 15.19 0 12.053 0 5.46 0 .092 5.367.089 11.96c-.001 2.107.549 4.163 1.594 5.973L0 24l6.196-1.625C7.94 23.326 9.977 23.867 12.047 23.867c6.592 0 11.96-5.367 11.963-11.96.002-3.196-1.24-6.2-3.486-8.448"></path>
+    </svg>
+  </a>
+
+  <!-- Call Now Floating Button -->
+  <a 
+    href={`tel:${COMPANY_INFO.phone}`}
+    aria-label={`Call Shah Ajay Kumar at ${COMPANY_INFO.phone}`}
+    class="w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-white"
+  >
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"></path>
+    </svg>
+  </a>
+
+</div>

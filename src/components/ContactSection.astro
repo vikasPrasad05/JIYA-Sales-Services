@@ -1,0 +1,105 @@
+---
+import { COMPANY_INFO } from '../data/jiyaData';
+---
+
+<section id="contact" class="py-16 lg:py-24 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Contact Info Column -->
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <span class="badge-industrial">Contact Us</span>
+          <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-2 font-heading">
+            Connect with Our Engineering Desk
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2">
+            Visit our shop and workshop facility in GIDC Vapi Phase 2 or contact Shah Ajay Kumar directly for immediate pricing and breakdown assistance.
+          </p>
+        </div>
+
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+          
+          {/* Location Box */}
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded flex gap-4 items-start">
+            <div class="w-10 h-10 rounded bg-slate-900 text-amber-400 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <strong class="text-slate-900 block font-heading text-sm">Shop &amp; Works Facility</strong>
+              <p class="text-slate-600 mt-1 leading-normal">{COMPANY_INFO.address}</p>
+            </div>
+          </div>
+
+          {/* Email Box */}
+          <div class="p-4 bg-slate-50 border border-slate-200 rounded flex gap-4 items-center">
+            <div class="w-10 h-10 rounded bg-slate-900 text-amber-400 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <strong class="text-slate-900 block font-heading text-sm">Official B2B Email</strong>
+              <a href={`mailto:${COMPANY_INFO.email}`} class="text-brand-blue font-bold hover:underline block mt-0.5">
+                {COMPANY_INFO.email}
+              </a>
+              <span class="text-slate-500 text-xs">For POs, RFQs &amp; Vendor Registration</span>
+            </div>
+          </div>
+
+          <div class="p-4 bg-amber-50 border border-amber-200 text-amber-900 rounded flex items-center justify-between">
+            <div>
+              <span class="text-xs font-bold block uppercase">GST Tax Registration</span>
+              <strong class="text-sm font-mono">{COMPANY_INFO.gstin}</strong>
+            </div>
+            <span class="bg-amber-200 text-amber-900 text-[10px] font-bold px-2 py-1 rounded">
+              Active Status
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Map & Direct Inquiries Column -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="bg-slate-900 text-white rounded-lg p-6 sm:p-8 border border-slate-800 shadow-xl space-y-4">
+          <h3 class="text-xl font-bold font-heading">Factory Location &amp; Directions</h3>
+          <p class="text-xs text-slate-300">
+            Located conveniently near Tulshi Hotel in 2nd Phase GIDC Vapi. Excellent access for industrial freight trucks and local loading.
+          </p>
+
+          <!-- Interactive Google Maps Frame Placeholder -->
+          <div class="relative w-full h-64 rounded bg-slate-800 overflow-hidden border border-slate-700">
+            <iframe 
+              title="JIYA Sales & Services GIDC Vapi Location Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.672056262446!2d72.923485!3d20.355154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0ce2bf496c141%3A0xc34b35e23652c42c!2sGIDC%20Phase%202%2C%20Vapi%2C%20Gujarat%20396195!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
+            <span>Operating Hours: Mon - Sat (9:00 AM - 7:30 PM)</span>
+            <a 
+              href={`https://wa.me/${COMPANY_INFO.phoneClean}`} 
+              target="_blank" 
+              class="text-amber-400 font-bold hover:underline"
+            >
+              Emergency Support Available →
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

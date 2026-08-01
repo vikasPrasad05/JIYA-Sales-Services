@@ -1,0 +1,104 @@
+---
+import { COMPANY_INFO } from '../data/jiyaData';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: URL | string;
+}
+
+const {
+  title = "JIYA Sales & Services | Industrial Material Handling & Caster Wheels Vapi",
+  description = "B2B Manufacturer & Supplier of Hand Pallet Trucks, Hydraulic Stackers, Caster Wheels, Drum Lifters & Forklift OEM Spares in GIDC Vapi. GST Registered (24DAIPS6965R1ZJ).",
+  image = "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+  canonicalURL = Astro.url,
+} = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jiyasalesservices.com/#organization",
+      "name": COMPANY_INFO.name,
+      "legalName": COMPANY_INFO.name,
+      "url": "https://jiyasalesservices.com",
+      "logo": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80",
+      "taxID": COMPANY_INFO.gstin,
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": COMPANY_INFO.phone,
+        "contactType": "sales & technical support",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Hindi", "Gujarati"]
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://jiyasalesservices.com/#localbusiness",
+      "name": COMPANY_INFO.name,
+      "image": image,
+      "telephone": COMPANY_INFO.phone,
+      "email": COMPANY_INFO.email,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No.26, Plot No.147, Nirmal Shopping Center, Near Tulshi Hotel, 2nd Phase, GIDC",
+        "addressLocality": COMPANY_INFO.city,
+        "addressRegion": COMPANY_INFO.state,
+        "postalCode": COMPANY_INFO.pincode,
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 20.355154,
+        "longitude": 72.923485
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:30"
+      },
+      "priceRange": "₹₹ - ₹₹₹"
+    }
+  ]
+};
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={image} />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />

@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactSection from '../components/ContactSection.astro';
+import FAQSection from '../components/FAQSection.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+---
+
+<Layout 
+  title="Contact Us | JIYA Sales & Services GIDC Vapi"
+  description="Contact JIYA Sales & Services in GIDC Vapi 2nd Phase. Phone: +91 99094 68007, Email: jiyasalesservices@gmail.com. GSTIN: 24DAIPS6965R1ZJ."
+>
+  <!-- Page Header Banner -->
+  <div class="bg-slate-900 text-white py-12 lg:py-16 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-heading">
+        Contact &amp; <span class="text-amber-400">Location Desk</span>
+      </h1>
+      <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+        Reach out directly for technical inquiries, customized wheel engineering, or breakdown spare parts support. Located in 2nd Phase GIDC Vapi.
+      </p>
+    </div>
+  </div>
+
+  <TrustBadges />
+
+  <!-- Contact Details & Map -->
+  <ContactSection />
+
+  <!-- FAQ Section -->
+  <FAQSection />
+</Layout>

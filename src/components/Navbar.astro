@@ -1,0 +1,108 @@
+---
+import { COMPANY_INFO } from '../data/jiyaData';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<header class="sticky top-0 z-40 bg-white border-b border-slate-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 bg-yellow-400 text-slate-950 font-black text-2xl flex items-center justify-center rounded border-2 border-yellow-500 shadow-md group-hover:bg-yellow-300 transition-colors">
+          J
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-black tracking-tight text-slate-900 font-heading">JIYA </span>
+            <span class="bg-yellow-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded border border-yellow-500 uppercase tracking-wide shadow-xs">
+              Sales &amp; Services
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700">
+        <a href="/" class={`transition-colors py-2 ${currentPath === '/' ? 'text-brand-blue font-bold border-b-2 border-brand-blue' : 'hover:text-brand-blue'}`}>Home</a>
+        <a href="/about" class={`transition-colors py-2 ${currentPath === '/about' ? 'text-brand-blue font-bold border-b-2 border-brand-blue' : 'hover:text-brand-blue'}`}>About</a>
+        <a href="/categories" class={`transition-colors py-2 ${currentPath === '/categories' ? 'text-brand-blue font-bold border-b-2 border-brand-blue' : 'hover:text-brand-blue'}`}>Categories</a>
+        <a href="/products" class={`transition-colors py-2 ${currentPath === '/products' ? 'text-brand-blue font-bold border-b-2 border-brand-blue' : 'hover:text-brand-blue'}`}>Product</a>
+        <a href="/contact" class={`transition-colors py-2 ${currentPath === '/contact' ? 'text-brand-blue font-bold border-b-2 border-brand-blue' : 'hover:text-brand-blue'}`}>Contact</a>
+      </nav>
+
+      <!-- Right CTAs -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a 
+          href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent(COMPANY_INFO.whatsappMsg)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3.5 py-2.5 rounded flex items-center gap-2 transition-colors shadow-sm"
+        >
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.461c-1.926 0-3.725-.515-5.285-1.415l-.379-.222-3.928 1.03 1.048-3.828-.247-.394C2.33 15.452 1.737 13.567 1.738 11.583 1.74 5.922 6.327 1.335 11.987 1.335c2.742 0 5.319 1.068 7.258 3.01 1.939 1.943 3.004 4.522 3.002 7.265-.002 5.661-4.588 10.248-10.25 10.248m8.318-18.566C18.172 1.068 15.19 0 12.053 0 5.46 0 .092 5.367.089 11.96c-.001 2.107.549 4.163 1.594 5.973L0 24l6.196-1.625C7.94 23.326 9.977 23.867 12.047 23.867c6.592 0 11.96-5.367 11.963-11.96.002-3.196-1.24-6.2-3.486-8.448"/>
+          </svg>
+          <span>WhatsApp RFQ</span>
+        </a>
+
+        <a 
+          href="/contact" 
+          class="b2b-btn-primary text-xs"
+        >
+          <span>Request Quote</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-btn"
+        aria-label="Toggle Navigation Menu"
+        class="lg:hidden p-2 rounded text-slate-700 hover:text-brand-blue hover:bg-slate-100"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3">
+    <a href="/" class={`block py-2 text-base font-semibold border-b border-slate-100 ${currentPath === '/' ? 'text-brand-blue font-bold' : 'text-slate-800'}`}>Home</a>
+    <a href="/about" class={`block py-2 text-base font-semibold border-b border-slate-100 ${currentPath === '/about' ? 'text-brand-blue font-bold' : 'text-slate-800'}`}>About</a>
+    <a href="/categories" class={`block py-2 text-base font-semibold border-b border-slate-100 ${currentPath === '/categories' ? 'text-brand-blue font-bold' : 'text-slate-800'}`}>Categories</a>
+    <a href="/products" class={`block py-2 text-base font-semibold border-b border-slate-100 ${currentPath === '/products' ? 'text-brand-blue font-bold' : 'text-slate-800'}`}>Product</a>
+    <a href="/contact" class={`block py-2 text-base font-semibold border-b border-slate-100 ${currentPath === '/contact' ? 'text-brand-blue font-bold' : 'text-slate-800'}`}>Contact</a>
+    
+    <div class="pt-2 flex flex-col gap-3">
+      <a 
+        href={`tel:${COMPANY_INFO.phone}`}
+        class="w-full text-center py-2.5 font-bold text-slate-900 border border-slate-300 rounded flex items-center justify-center gap-2"
+      >
+        <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+        <span>Call: {COMPANY_INFO.phone}</span>
+      </a>
+      <a href="/contact" class="w-full b2b-btn-amber justify-center text-center">
+        Get B2B Quote
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

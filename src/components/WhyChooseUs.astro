@@ -1,0 +1,86 @@
+---
+import { WHY_CHOOSE_US, COMPANY_INFO } from '../data/jiyaData';
+---
+
+<section id="why-choose-us" class="py-16 lg:py-24 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Content Column -->
+      <div class="lg:col-span-6 space-y-6">
+        <div>
+          <span class="badge-industrial">Why Choose Us</span>
+          <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-2 font-heading">
+            Engineering Rigor &amp; Unmatched Industry Reliability
+          </h2>
+          <p class="text-sm text-slate-600 mt-2">
+            Why leading manufacturing plants across Gujarat and India trust JIYA Sales &amp; Services for their material handling and caster wheel requirements.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {WHY_CHOOSE_US.map((item) => (
+            <div class="p-4 rounded bg-slate-50 border border-slate-200 flex gap-4 items-start hover:border-brand-blue/40 transition-colors">
+              <span class="text-xl font-extrabold text-amber-600 font-heading shrink-0 bg-amber-100 border border-amber-300 w-10 h-10 rounded flex items-center justify-center">
+                {item.number}
+              </span>
+              <div>
+                <h4 class="text-base font-bold text-slate-900 font-heading">{item.title}</h4>
+                <p class="text-xs text-slate-600 mt-1 leading-relaxed">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right Feature Showcase Card -->
+      <div class="lg:col-span-6">
+        <div class="bg-slate-900 text-white rounded-lg p-8 space-y-6 border border-slate-800 shadow-xl">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Quality Assurance</span>
+            <h3 class="text-2xl font-black mt-1 font-heading">GIDC Vapi Testing Standards</h3>
+          </div>
+
+          <div class="space-y-4 text-xs text-slate-300">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded bg-emerald-900 text-emerald-300 flex items-center justify-center shrink-0 font-bold">1</div>
+              <div>
+                <strong class="text-white block font-semibold text-sm">Pressure Testing Hydraulic Pumps</strong>
+                <p class="text-slate-400 mt-0.5">Every pump cylinder is subjected to 1.5x rated pressure checks to guarantee zero oil seepage under full operational loads.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded bg-emerald-900 text-emerald-300 flex items-center justify-center shrink-0 font-bold">2</div>
+              <div>
+                <strong class="text-white block font-semibold text-sm">Durometer &amp; Load Testing Caster Wheels</strong>
+                <p class="text-slate-400 mt-0.5">Polyurethane and Nylon tread hardness (Shore A/D) is verified to ensure zero flat-spotting and floor scuffing.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded bg-emerald-900 text-emerald-300 flex items-center justify-center shrink-0 font-bold">3</div>
+              <div>
+                <strong class="text-white block font-semibold text-sm">Same-Day Emergency Dispatch</strong>
+                <p class="text-slate-400 mt-0.5">Critical hydraulic seals, load wheels, and Curtis controllers are dispatched within hours for plant breakdown recovery.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <div class="text-xs">
+              <span class="text-slate-400 block">GST Compliance</span>
+              <strong class="text-white font-mono">{COMPANY_INFO.gstin}</strong>
+            </div>
+            <a href="#contact" class="b2b-btn-amber text-xs py-2 px-3">
+              Get Technical Advice
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

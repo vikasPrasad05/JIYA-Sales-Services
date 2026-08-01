@@ -1,0 +1,62 @@
+---
+import { FAQS } from '../data/jiyaData';
+---
+
+<section id="faq" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center space-y-3">
+      <span class="badge-industrial">Frequently Asked Questions</span>
+      <h2 class="text-3xl font-black text-slate-900 tracking-tight font-heading">
+        Common B2B Purchasing &amp; Technical Queries
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600">
+        Got questions about custom specifications, load testing, GST tax credits, or delivery timelines?
+      </p>
+    </div>
+
+    <div class="space-y-3 mt-10">
+      {FAQS.map((faq, idx) => (
+        <div class="faq-item bg-white border border-slate-200 rounded-lg overflow-hidden transition-colors">
+          <button
+            class="faq-toggle w-full p-5 text-left flex justify-between items-center gap-4 font-bold text-slate-900 text-sm hover:text-brand-blue font-heading cursor-pointer"
+            data-faq-idx={idx}
+          >
+            <span>{faq.q}</span>
+            <span class="faq-icon text-amber-600 font-extrabold text-lg shrink-0">
+              {idx === 0 ? '−' : '+'}
+            </span>
+          </button>
+
+          <div class={`faq-answer p-5 pt-0 text-xs sm:text-sm text-slate-600 border-t border-slate-100 leading-relaxed bg-slate-50/50 ${idx === 0 ? 'block' : 'hidden'}`}>
+            {faq.a}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+
+  faqToggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.faq-item');
+      const answer = parent?.querySelector('.faq-answer');
+      const icon = btn.querySelector('.faq-icon');
+
+      const isHidden = answer?.classList.contains('hidden');
+
+      // Close all other FAQs
+      document.querySelectorAll('.faq-answer').forEach((ans) => ans.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach((ic) => (ic.textContent = '+'));
+
+      if (isHidden && answer && icon) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    });
+  });
+</script>

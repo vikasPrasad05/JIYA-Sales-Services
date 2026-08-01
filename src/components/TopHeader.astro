@@ -1,0 +1,44 @@
+---
+import { COMPANY_INFO } from '../data/jiyaData';
+---
+
+<div class="bg-brand-dark text-slate-300 text-xs py-2 border-b border-slate-800 hidden md:block">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+    <!-- Devotional & Company Info -->
+    <div class="flex items-center space-x-4">
+      <span class="text-amber-400 font-semibold tracking-wider">
+        {COMPANY_INFO.devotionTitles[1]}
+      </span>
+      <span class="text-slate-600">|</span>
+      <span class="flex items-center gap-1.5 text-slate-300">
+        <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <strong class="text-white">GSTIN:</strong> {COMPANY_INFO.gstin}
+      </span>
+      <span class="text-slate-600">|</span>
+      <span class="text-slate-400">
+        Proprietor: <strong class="text-slate-200">{COMPANY_INFO.proprietor}</strong>
+      </span>
+    </div>
+
+    <!-- Quick Contact -->
+    <div class="flex items-center space-x-6">
+      <a href={`tel:${COMPANY_INFO.phone}`} class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+        <span>{COMPANY_INFO.phone}</span>
+      </a>
+      <a href={`mailto:${COMPANY_INFO.email}`} class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+        <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span>{COMPANY_INFO.email}</span>
+      </a>
+      <span class="bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded text-[10px] font-bold border border-emerald-800">
+        GIDC Vapi Unit
+      </span>
+    </div>
+  </div>
+</div>

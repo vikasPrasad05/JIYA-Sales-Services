@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import { COMPANY_INFO, PRODUCT_CATEGORIES, PRODUCTS } from '../data/jiyaData';
+
+// Get popular products for homepage highlight
+const popularProducts = PRODUCTS.filter(p => p.isPopular).slice(0, 6);
+---
+
+<Layout 
+  title="JIYA Sales & Services | Hand Pallet Trucks, Caster Wheels & Stacker Spares Vapi"
+  description="Authorized B2B manufacturer & supplier of Hand Pallet Trucks, Hydraulic Stackers, Polyurethane Caster Wheels, Drum Lifters, and Forklift Spares in GIDC Vapi. GSTIN: 24DAIPS6965R1ZJ."
+>
+  <!-- Hero Banner -->
+  <Hero />
+
+  <!-- Trust Badges -->
+  <TrustBadges />
+
+  <!-- 1. Company Overview Section -->
+  <section class="py-16 lg:py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-5">
+          <span class="badge-industrial">Welcome to JIYA Industrial</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-heading leading-tight">
+            Leading Material Handling &amp; Industrial Spare Parts Partner in GIDC Vapi
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Established in the heart of GIDC Phase 2, Vapi, <strong class="text-slate-900">JIYA Sales & Services</strong> provides end-to-end B2B sales, custom manufacturing, and technical repairs for material handling equipment, heavy load polyurethane casters, and OEM hydraulic spares.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 pt-2 font-medium text-xs text-slate-700">
+            <div class="flex items-center gap-2 p-3 bg-slate-50 rounded border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span>100% Tax Compliant (GSTIN: {COMPANY_INFO.gstin})</span>
+            </div>
+            <div class="flex items-center gap-2 p-3 bg-slate-50 rounded border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>Genuine OEM Spares &amp; Fast Technical Support</span>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <a href="/about" class="b2b-btn-primary text-xs">
+              <span>Read Full About Us</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-900 text-white rounded-lg p-6 sm:p-8 border border-slate-800 shadow-xl space-y-4">
+          <div class="border-b border-slate-800 pb-3">
+            <span class="text-xs font-mono text-amber-400 font-bold uppercase">Quick Company Profile</span>
+            <h3 class="text-xl font-bold font-heading text-white mt-1">GIDC Vapi Headquarters</h3>
+          </div>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex justify-between pb-2 border-b border-slate-800/60">
+              <span class="text-slate-400">Entity:</span>
+              <strong class="text-white">JIYA Sales &amp; Services</strong>
+            </li>
+            <li class="flex justify-between pb-2 border-b border-slate-800/60">
+              <span class="text-slate-400">Proprietor:</span>
+              <strong class="text-white">{COMPANY_INFO.proprietor}</strong>
+            </li>
+            <li class="flex justify-between pb-2 border-b border-slate-800/60">
+              <span class="text-slate-400">Location:</span>
+              <span class="text-amber-400 font-medium">GIDC Phase 2, Vapi</span>
+            </li>
+            <li class="flex justify-between pb-2 border-b border-slate-800/60">
+              <span class="text-slate-400">Primary Contact:</span>
+              <a href={`tel:${COMPANY_INFO.phone}`} class="text-white font-bold hover:underline">{COMPANY_INFO.phone}</a>
+            </li>
+          </ul>
+          <a href="/contact" class="w-full b2b-btn-amber text-xs py-2.5 justify-center text-center">
+            Visit Contact Page
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Product Categories Overview -->
+  <section class="py-16 lg:py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="badge-industrial">Product Categories</span>
+          <h2 class="text-3xl font-black text-slate-900 tracking-tight font-heading mt-1">
+            Our Core Industrial Spectrum
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-xl">
+            Explore our specialized categories engineered for heavy load transport, cleanrooms, and industrial maintenance.
+          </p>
+        </div>
+        <a href="/categories" class="b2b-btn-primary text-xs shrink-0">
+          <span>View All Categories</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {PRODUCT_CATEGORIES.slice(0, 6).map((cat) => (
+          <div class="b2b-card rounded-lg overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative h-44 overflow-hidden bg-white flex items-center justify-center p-3">
+                <img 
+                  src={cat.image} 
+                  alt={cat.title} 
+                  class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-3 right-3 bg-yellow-400 text-slate-950 text-xs font-black px-2 py-0.5 rounded border border-yellow-500 shadow-sm">
+                  {cat.itemCount}+ Models
+                </div>
+              </div>
+              <div class="p-5">
+                <h3 class="text-lg font-bold text-slate-900 font-heading group-hover:text-brand-blue transition-colors">
+                  {cat.title}
+                </h3>
+                <p class="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
+                  {cat.description}
+                </p>
+              </div>
+            </div>
+            <div class="p-5 pt-0 border-t border-slate-100 mt-2">
+              <a href={`/products?category=${cat.id}`} class="text-xs font-bold text-brand-blue hover:text-amber-600 flex items-center gap-1">
+                <span>Explore {cat.title}</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Popular Products Highlights -->
+  <section class="py-16 lg:py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="badge-industrial">Featured Products</span>
+          <h2 class="text-3xl font-black text-slate-900 tracking-tight font-heading mt-1">
+            Popular Equipment &amp; Spares
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-xl">
+            High demand industrial equipment and OEM spare parts ready for quick dispatch.
+          </p>
+        </div>
+        <a href="/products" class="b2b-btn-amber text-xs shrink-0">
+          <span>View Full Product Catalog ({PRODUCTS.length}+)</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {popularProducts.map((product) => (
+          <div key={product.id} class="b2b-card rounded-lg overflow-hidden flex flex-col justify-between group">
+            <div>
+              <div class="relative h-48 bg-white flex items-center justify-center p-3 overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={product.name}
+                  class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute top-3 left-3 bg-slate-900 text-yellow-400 text-xs font-mono font-bold px-2 py-0.5 rounded border border-slate-700 shadow-md">
+                  Model: {product.model}
+                </div>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base font-bold text-slate-900 font-heading leading-snug">
+                  {product.name}
+                </h3>
+                <p class="text-xs text-slate-600 line-clamp-2">
+                  {product.description}
+                </p>
+                {product.loadCapacity && (
+                  <div class="text-[11px] font-bold text-slate-800 bg-slate-100 p-2 rounded border border-slate-200">
+                    Capacity: {product.loadCapacity}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div class="p-5 pt-0 border-t border-slate-100 mt-2 flex items-center gap-2">
+              <a href="/products" class="w-full text-center text-xs font-semibold py-2 px-3 border border-slate-300 hover:border-slate-400 text-slate-800 rounded bg-white hover:bg-slate-50 transition-colors">
+                View Specs in Catalog
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Contact / RFQ CTA Banner -->
+  <section class="py-16 bg-gradient-to-r from-slate-900 via-brand-dark to-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+      <span class="badge-industrial bg-amber-400/20 text-amber-400 border-amber-500/40">Instant B2B Quotations</span>
+      <h2 class="text-3xl sm:text-4xl font-black font-heading text-white">Need a Formal GST Quotation or Technical Support?</h2>
+      <p class="text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Our engineering team in GIDC Vapi is available to provide formal quotes, dimensional drawings, and custom load-bearing recommendations.
+      </p>
+      <div class="pt-2 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="b2b-btn-amber text-xs py-3 px-6 shadow-lg">
+          Contact Sales Team
+        </a>
+        <a href="/contact" class="b2b-btn-outline text-xs py-3 px-6 text-white border-slate-700 hover:bg-slate-800">
+          Contact Details &amp; Map
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

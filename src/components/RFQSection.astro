@@ -1,0 +1,136 @@
+---
+import { PRODUCT_CATEGORIES, COMPANY_INFO } from '../data/jiyaData';
+---
+
+<section id="rfq-section" class="py-16 lg:py-24 bg-slate-900 text-white border-b border-slate-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center space-y-3 mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-400/10 text-amber-400 border border-amber-400/30 uppercase tracking-wider">
+        ⚡ Quick Quotation
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-black font-heading text-white tracking-tight">
+        Technical Quotation Request
+      </h2>
+      <p class="text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Fill in 3 simple fields to get an instant GST price quote and technical spec sheet directly on WhatsApp or Call.
+      </p>
+    </div>
+
+    <div class="bg-white text-slate-900 rounded-xl p-6 sm:p-10 shadow-2xl border border-slate-200">
+      <form id="rfq-form" class="space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {/* Name / Company */}
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              Name / Company Name *
+            </label>
+            <input 
+              type="text" 
+              id="rfq-name"
+              required
+              placeholder="e.g. Ramesh Kumar / ABC Pharma" 
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all bg-slate-50 hover:bg-white"
+            />
+          </div>
+
+          {/* Mobile / WhatsApp */}
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+              Phone / WhatsApp Number *
+            </label>
+            <input 
+              type="tel" 
+              id="rfq-phone"
+              required
+              placeholder="+91 99094 XXXXX" 
+              class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all bg-slate-50 hover:bg-white"
+            />
+          </div>
+        </div>
+
+        {/* Product Category Dropdown */}
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            Product Category *
+          </label>
+          <select 
+            id="rfq-category"
+            class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all bg-slate-50 hover:bg-white text-slate-800 font-medium"
+          >
+            {PRODUCT_CATEGORIES.map(cat => (
+              <option value={cat.title}>
+                {cat.title} ({cat.itemCount}+ items)
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Requirements & Quantity */}
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            Quantity &amp; Specification Details
+          </label>
+          <textarea 
+            id="rfq-requirements"
+            rows="3"
+            placeholder="e.g. Need 2 units Hand Pallet Truck 2500kg (550mm width) or 12 units 6x2 Red PU Casters for GIDC Vapi." 
+            class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all bg-slate-50 hover:bg-white resize-none"
+          ></textarea>
+        </div>
+
+        {/* Action Buttons */}
+        <div class="pt-2 flex flex-col sm:flex-row gap-3 items-center">
+          <button 
+            type="submit" 
+            class="w-full sm:w-2/3 b2b-btn-amber justify-center text-sm py-3.5 font-bold shadow-lg rounded-lg cursor-pointer"
+          >
+            <span>Get Instant Quote on WhatsApp</span>
+            <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.099 4.019 4.019-1.099z"></path>
+            </svg>
+          </button>
+
+          <a 
+            href={`tel:${COMPANY_INFO.phone}`}
+            class="w-full sm:w-1/3 py-3.5 px-4 rounded-lg border border-slate-300 hover:border-slate-400 text-slate-800 bg-slate-100 hover:bg-slate-200 font-bold text-xs text-center flex items-center justify-center gap-2 transition-colors"
+          >
+            <svg class="w-4 h-4 fill-current text-amber-600" viewBox="0 0 24 24">
+              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-2.2 2.2a15.053 15.053 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1.01A11.36 11.36 0 018.57 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"></path>
+            </svg>
+            <span>Direct Call</span>
+          </a>
+        </div>
+
+        <div class="pt-2 text-center text-xs text-slate-500">
+          🔒 Your contact details are secure. GST Tax Invoices generated for all purchases.
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script define:vars={{ phoneClean: COMPANY_INFO.phoneClean }}>
+  const form = document.getElementById('rfq-form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('rfq-name')?.value || '';
+    const phone = document.getElementById('rfq-phone')?.value || '';
+    const category = document.getElementById('rfq-category')?.value || '';
+    const requirements = document.getElementById('rfq-requirements')?.value || 'Standard Specifications';
+
+    const msg = `*QUOTATION REQUEST - JIYA INDUSTRIAL*
+----------------------------------
+👤 *Name / Company:* ${name}
+📞 *Phone:* ${phone}
+📦 *Product Category:* ${category}
+📝 *Requirements:* ${requirements}
+----------------------------------
+Please send price quote & details.`;
+
+    window.open(`https://wa.me/${phoneClean}?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+</script>

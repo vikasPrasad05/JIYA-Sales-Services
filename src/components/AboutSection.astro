@@ -1,0 +1,96 @@
+---
+import { COMPANY_INFO } from '../data/jiyaData';
+---
+
+<section id="about" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Image Column -->
+      <div class="lg:col-span-5 relative">
+        <div class="bg-brand-dark p-2 rounded-lg shadow-md border border-slate-300">
+          <img 
+            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" 
+            alt="JIYA Sales & Services Industrial Assembly Facility"
+            class="rounded border border-slate-700 w-full h-[400px] object-cover"
+            loading="lazy"
+          />
+        </div>
+        <!-- Floating Info Overlay -->
+        <div class="absolute -bottom-6 -right-4 sm:right-6 bg-amber-500 text-slate-950 p-4 rounded shadow-lg border-2 border-slate-900 max-w-xs">
+          <div class="text-xs font-black uppercase tracking-wider">Manufacturing &amp; Sales Hub</div>
+          <div class="text-sm font-extrabold mt-1">GIDC 2nd Phase, Vapi</div>
+          <p class="text-[11px] font-medium text-slate-900 mt-1">Direct B2B supply to Gujarat, Maharashtra &amp; Pan-India manufacturing units.</p>
+        </div>
+      </div>
+
+      <!-- Right Content Column -->
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <span class="badge-industrial">About JIYA Sales &amp; Services</span>
+          <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-2 font-heading">
+            Your Trusted Industrial Material Handling &amp; Caster Wheel Partner
+          </h2>
+        </div>
+
+        <p class="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+          Established in the vibrant industrial hub of GIDC Vapi, <strong class="text-slate-900 font-semibold">JIYA Sales &amp; Services</strong> specializes in the sales, custom manufacturing, and complete maintenance overhauling of <strong class="text-brand-blue font-semibold">Material Handling Equipment, Industrial Caster Wheels, Hand Pallet Trucks, Hydraulic Stackers,</strong> and <strong class="text-brand-blue font-semibold">Forklift OEM Spare Parts</strong>.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="p-4 bg-white border border-slate-200 rounded">
+            <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Custom Load Ratings</span>
+            </h4>
+            <p class="text-xs text-slate-600 mt-1">From 80 kg light casters to 8,000 kg heavy UHMW &amp; forged steel wheels engineered for extreme mill conditions.</p>
+          </div>
+
+          <div class="p-4 bg-white border border-slate-200 rounded">
+            <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>SS 304 Cleanroom Grade</span>
+            </h4>
+            <p class="text-xs text-slate-600 mt-1">Specialized stainless steel pallet trucks, hydraulic scissors, and hygienic casters for pharma &amp; food processing.</p>
+          </div>
+
+          <div class="p-4 bg-white border border-slate-200 rounded">
+            <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Complete Overhaul Services</span>
+            </h4>
+            <p class="text-xs text-slate-600 mt-1">In-house workshop for hydraulic pump re-sealing, stacker mast realignment, and Curtis controller diagnostics.</p>
+          </div>
+
+          <div class="p-4 bg-white border border-slate-200 rounded">
+            <h4 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Verified GST Invoicing</span>
+            </h4>
+            <p class="text-xs text-slate-600 mt-1">Every B2B order comes with full GST compliance (GSTIN: {COMPANY_INFO.gstin}) for Input Tax Credit claims.</p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-slate-900 text-white rounded flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="text-xs text-amber-400 font-bold">Factory &amp; Shop Address</div>
+            <div class="text-xs text-slate-300 font-medium">{COMPANY_INFO.address}</div>
+          </div>
+          <a href="#contact" class="b2b-btn-amber text-xs py-2 px-3">
+            Contact Engineering Desk
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

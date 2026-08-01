@@ -1,0 +1,201 @@
+---
+import { PRODUCT_CATEGORIES } from '../data/jiyaData';
+
+// Map 1 representative high-quality image per product category
+const CATEGORY_SLIDES = [
+  {
+    categoryId: "material-handling",
+    categoryTitle: "Material Handling Equipments",
+    subTitle: "Hand Pallet Trucks & Hydraulic Stackers",
+    image: "/images/products/16.jpeg",
+    alt: "Material Handling Equipments - Hand Pallet Truck"
+  },
+  {
+    categoryId: "trolleys-cranes",
+    categoryTitle: "Platform Trolleys, Cranes & Storage",
+    subTitle: "Goods Trolleys, Floor Cranes & Storage Bins",
+    image: "/images/products/ms_platform_trolley_blue.png",
+    alt: "Platform Trolleys & Floor Cranes"
+  },
+  {
+    categoryId: "caster-wheels",
+    categoryTitle: "Industrial Caster Wheels",
+    subTitle: "Heavy Duty PU, Fabricated & SS 304 Casters",
+    image: "/images/products/caster_pu_jss8.png",
+    alt: "All Types of Industrial Caster Wheels"
+  },
+  {
+    categoryId: "industrial-wheels-spares",
+    categoryTitle: "Industrial Wheels & OEM Spares",
+    subTitle: "PU Load Rollers, UHMW & Cast Iron Wheels",
+    image: "/images/products/29.jpeg",
+    alt: "Industrial Wheels & OEM Spare Parts"
+  }
+];
+---
+
+<div id="hero-slider-container" class="relative w-full h-full min-h-[380px] sm:min-h-[460px] lg:min-h-full overflow-hidden bg-slate-950 group">
+  <!-- Left side edge fade effect for seamless hero text blend -->
+  <div class="absolute left-0 top-0 bottom-0 w-24 sm:w-40 lg:w-64 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent z-20 pointer-events-none"></div>
+
+  <!-- Subtle background overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-slate-950/30 z-10 pointer-events-none"></div>
+
+  <!-- Slides images & category badges -->
+  {CATEGORY_SLIDES.map((slide, index) => (
+    <div
+      class={`hero-slide-item absolute inset-0 flex flex-col items-center justify-center p-6 transition-all duration-700 ease-in-out ${
+        index === 0 ? 'opacity-100 z-10 scale-100' : 'opacity-0 z-0 pointer-events-none scale-95'
+      }`}
+      data-slide-index={index}
+    >
+      <!-- Full Height Large White Card Container -->
+      <div class="w-full max-w-[520px] lg:max-w-[560px] h-[380px] sm:h-[460px] lg:h-[510px] bg-white rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] border-4 border-white/80 flex flex-col items-center justify-center p-3 sm:p-5 relative overflow-hidden group/card transition-all duration-300">
+        
+        <!-- Category Badge Header Overlay on Top of Card -->
+        <div class="absolute top-4 left-4 right-4 z-20 flex items-center justify-between gap-2 pointer-events-none">
+          <span class="bg-amber-400 text-slate-950 text-[11px] sm:text-xs font-black uppercase px-3 py-1 rounded-full shadow-md border border-yellow-300 tracking-wider">
+            Category 0{index + 1}
+          </span>
+          <span class="bg-slate-900/90 text-white text-[11px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-slate-700 shadow-md backdrop-blur-md max-w-[70%] truncate">
+            {slide.categoryTitle}
+          </span>
+        </div>
+
+        <!-- Full Height Product Image Container -->
+        <div class="w-full h-full flex items-center justify-center pt-10 pb-12 px-2">
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            class="w-full h-full object-contain filter drop-shadow-[0_15px_20px_rgba(0,0,0,0.15)] group-hover/card:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <!-- Bottom Category Link Bar inside Card -->
+        <div class="absolute bottom-3 inset-x-3 sm:inset-x-4 z-20 text-center">
+          <a 
+            href={`/products?category=${slide.categoryId}`}
+            class="inline-flex items-center justify-between w-full bg-slate-900 hover:bg-amber-400 text-white hover:text-slate-950 text-xs font-bold px-4 py-2.5 rounded-2xl border border-slate-800 hover:border-amber-500 transition-all shadow-md group/link"
+          >
+            <span class="truncate">{slide.subTitle}</span>
+            <span class="flex items-center gap-1 shrink-0 text-amber-400 group-hover/link:text-slate-950">
+              <span>Browse Category</span>
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  ))}
+
+  <!-- Prev Arrow -->
+  <button
+    id="hero-slider-prev"
+    aria-label="Previous Category Slide"
+    class="absolute left-6 sm:left-10 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-amber-500 hover:text-slate-950 text-white flex items-center justify-center border border-slate-700 hover:border-amber-400 transition-all shadow-lg text-xl cursor-pointer"
+  >
+    ‹
+  </button>
+
+  <!-- Next Arrow -->
+  <button
+    id="hero-slider-next"
+    aria-label="Next Category Slide"
+    class="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-amber-500 hover:text-slate-950 text-white flex items-center justify-center border border-slate-700 hover:border-amber-400 transition-all shadow-lg text-xl cursor-pointer"
+  >
+    ›
+  </button>
+
+  <!-- Dot Indicators -->
+  <div class="absolute bottom-4 inset-x-0 z-30 flex justify-center items-center gap-2">
+    {CATEGORY_SLIDES.map((slide, idx) => (
+      <button
+        class={`hero-slider-dot h-2.5 rounded-full transition-all cursor-pointer ${
+          idx === 0
+            ? 'bg-yellow-400 w-8'
+            : 'bg-white/40 hover:bg-white/70 w-2.5'
+        }`}
+        data-dot-index={idx}
+        aria-label={`Go to ${slide.categoryTitle}`}
+        title={slide.categoryTitle}
+      ></button>
+    ))}
+  </div>
+</div>
+
+<script>
+  let currentIdx = 0;
+  const slideItems = document.querySelectorAll<HTMLElement>('.hero-slide-item');
+  const dotItems = document.querySelectorAll<HTMLElement>('.hero-slider-dot');
+  const totalSlides = slideItems.length;
+  let timer: any = null;
+
+  function gotoSlide(index: number) {
+    currentIdx = index;
+    slideItems.forEach((item, idx) => {
+      if (idx === index) {
+        item.classList.remove('opacity-0', 'z-0', 'pointer-events-none', 'scale-95');
+        item.classList.add('opacity-100', 'z-10', 'scale-100');
+      } else {
+        item.classList.remove('opacity-100', 'z-10', 'scale-100');
+        item.classList.add('opacity-0', 'z-0', 'pointer-events-none', 'scale-95');
+      }
+    });
+
+    dotItems.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.remove('bg-white/40', 'w-2.5');
+        dot.classList.add('bg-yellow-400', 'w-8');
+      } else {
+        dot.classList.remove('bg-yellow-400', 'w-8');
+        dot.classList.add('bg-white/40', 'w-2.5');
+      }
+    });
+  }
+
+  function advanceSlide() {
+    gotoSlide((currentIdx + 1) % totalSlides);
+  }
+
+  function startAutoSlide() {
+    if (!timer) {
+      timer = setInterval(advanceSlide, 4000);
+    }
+  }
+
+  function stopAutoSlide() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  document.getElementById('hero-slider-next')?.addEventListener('click', () => {
+    gotoSlide((currentIdx + 1) % totalSlides);
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  document.getElementById('hero-slider-prev')?.addEventListener('click', () => {
+    gotoSlide((currentIdx - 1 + totalSlides) % totalSlides);
+    stopAutoSlide();
+    startAutoSlide();
+  });
+
+  dotItems.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      gotoSlide(idx);
+      stopAutoSlide();
+      startAutoSlide();
+    });
+  });
+
+  const sliderBox = document.getElementById('hero-slider-container');
+  sliderBox?.addEventListener('mouseenter', stopAutoSlide);
+  sliderBox?.addEventListener('mouseleave', startAutoSlide);
+
+  startAutoSlide();
+</script>
