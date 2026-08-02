@@ -46,6 +46,27 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     itemCount: 16
   },
   {
+    id: "pallet-truck-parts",
+    title: "Hydraulic Hand Pallet Truck Parts",
+    description: "Complete spare parts for 2.5T/3T/5T pallet trucks: Jack Pumps, Handles, Oil Seal Kits, Shafts, Release Valves, Pistons, Arms, Brackets & Wheels (Items 1-40).",
+    image: "/images/products/17.jpeg",
+    itemCount: 40
+  },
+  {
+    id: "electric-stacker-parts",
+    title: "Fully Electric Stacker Spare Parts",
+    description: "OEM electronic components & drive spares for electric stackers: Curtis Controllers, Electronic Throttles, EM Brakes, Encoders, DC Contactors & Battery Connectors.",
+    image: "/images/products/hydraulic_stacker_yellow.png",
+    itemCount: 12
+  },
+  {
+    id: "forklift-parts",
+    title: "Forklift Spare Parts & Safety Accessories",
+    description: "Forklift safety equipment & replacement parts: Biometric Access Control, Strobe Beacons, Red/Blue Safety Spotlights, Wireless Fork Cameras, Solid Tires & Fork Tines.",
+    image: "/images/products/hpt_yellow_550_clean.png",
+    itemCount: 14
+  },
+  {
     id: "trolleys-cranes",
     title: "Platform Trolleys, Cranes & Storage",
     description: "Goods Mesh Trolleys, MS & SS Platform Trolleys, Hydraulic Floor Cranes, Dock Levelers, Stair Climbing Carts & Storage Bins.",
@@ -82,7 +103,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["550mm x 1150mm"],
     features: ["Heavy Duty Steel Frame", "Leak-proof Monoblock Pump", "Tandem PU / Nylon Wheels", "Overload Relief Valve"],
     applications: ["Warehouses", "Factories", "Logistics Hubs", "Loading Bays"],
-    image: "/images/products/hpt_yellow_550_clean.png",
+    image: "/images/products/16.jpeg",
     isPopular: true
   },
   {
@@ -95,7 +116,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["685mm x 1220mm"],
     features: ["Wide Span Forks", "Ergonomic Rubber Handle", "Precision Sealed Bearings", "Powder Coated Finish"],
     applications: ["Pharma Plants", "Export Packaging", "Textile Mills", "Chemical Plants"],
-    image: "/images/products/hpt_yellow_685_clean.png",
+    image: "/images/products/15.jpeg",
     isPopular: true
   },
   {
@@ -108,7 +129,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["550mm / 685mm Width"],
     features: ["Digital LCD Indicator Display", "Tare & Zero Weight Buttons", "High Precision Load Cells", "Rechargeable Battery"],
     applications: ["Dispatch Depots", "Freight Forwarding", "Raw Material Inward"],
-    image: "/images/products/hpt_yellow_550_clean.png"
+    image: "/images/products/14.jpeg"
   },
   {
     id: "mh-jss-4",
@@ -120,7 +141,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["550mm x 1150mm", "685mm x 1220mm"],
     features: ["Full SS 304 Frame & Pump", "Corrosion Resistant", "Washdown Safe", "Hygienic Nylon Wheels"],
     applications: ["Pharma Cleanrooms", "Food & Beverage", "Chemical Processing"],
-    image: "/images/products/hpt_ss304_clean.png",
+    image: "/images/products/13.jpeg",
     isPopular: true
   },
   {
@@ -133,7 +154,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Max Lift: 800mm"],
     features: ["Automatic Rear Lock Stabilisers", "Dual Cylinder Lift Pump", "Ergonomic Workstation Height"],
     applications: ["Assembly Lines", "Sorting Stations", "Packaging Bay"],
-    image: "/images/products/ss_hydraulic_scissor.png"
+    image: "/images/products/12.jpeg"
   },
   {
     id: "mh-jss-6",
@@ -145,7 +166,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Compact Chassis"],
     features: ["Lithium / Lead-Acid Battery", "Creep Speed Control", "Electromagnetic Emergency Brake"],
     applications: ["Distribution Centers", "Logistics Hubs", "Multi-shift Warehouses"],
-    image: "/images/products/hpt_yellow_550_clean.png"
+    image: "/images/products/11.jpeg"
   },
   {
     id: "mh-jss-7",
@@ -157,7 +178,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: 1.6m", "2.0m", "3.0m"],
     features: ["High Tensile C-Channel Mast", "Foot Brake Wheel Lock", "Adjustable Tine Width"],
     applications: ["Warehouse Racking", "Truck Loading", "Small Plants"],
-    image: "/images/products/hydraulic_stacker_yellow.png",
+    image: "/images/products/10.jpeg",
     isPopular: true
   },
   {
@@ -170,7 +191,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: 1.6m - 3.5m"],
     features: ["Heavy Duty Electric Lift Motor", "Built-in Battery Charger", "Key Control Switch"],
     applications: ["Racking Warehouses", "Manufacturing Plants"],
-    image: "/images/products/hydraulic_stacker_yellow.png"
+    image: "/images/products/9.jpeg"
   },
   {
     id: "mh-jss-9",
@@ -182,7 +203,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: up to 4.5m"],
     features: ["Curtis AC Drive System", "Proportional Lifting Control", "Turtle Speed Mode"],
     applications: ["High Density Warehouses", "Automotive Plants"],
-    image: "/images/products/hydraulic_stacker_yellow.png"
+    image: "/images/products/8.jpeg"
   },
   {
     id: "mh-jss-10",
@@ -194,7 +215,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Lift Height: 1.6m - 2.5m"],
     features: ["V-Cradle Roll Attachment", "Hydraulic Lift Pump", "Safety Load Guard"],
     applications: ["Paper Mills", "Textile & Fabric Units", "Cable Manufacturers"],
-    image: "/images/products/hydraulic_stacker_yellow.png"
+    image: "/images/products/7.jpeg"
   },
   {
     id: "mh-jss-11",
@@ -206,7 +227,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Fits Standard 210L Steel & Plastic Drums"],
     features: ["360° Worm Gear Rotation", "Automatic Rim Clamp", "Hydraulic Foot Pump"],
     applications: ["Chemical Plants", "Pharma Dosing", "Paint Batching"],
-    image: "/images/products/drum_lifter_tilter.png",
+    image: "/images/products/6.jpeg",
     isPopular: true
   },
   {
@@ -1060,6 +1081,719 @@ export const PRODUCTS: Product[] = [
     applications: ["Pallet Truck Maintenance", "Hydraulic Servicing"],
     image: "/images/products/17.jpeg",
     isPopular: true
+  },
+
+  // ==========================================
+  // SHEET 5: HYDRAULIC HAND PALLET TRUCK PARTS (1-40)
+  // ==========================================
+  {
+    id: "hpt-part-1",
+    model: "Item 1",
+    name: "Jack Pump",
+    category: "pallet-truck-parts",
+    description: "Complete hydraulic jack pump assembly suitable for 2.5 Ton, 3 Ton, and 5 Ton hand pallet trucks (Maini / Neelakamal / Baka models).",
+    loadCapacity: "2.5 Ton / 3 Ton / 5 Ton",
+    sizes: ["Maini / Neelakamal / Baka Fitment"],
+    features: ["Monoblock Cast Body", "Integrated Overload Relief", "Leak-Proof Seals", "Heavy Duty Lift Capacity"],
+    applications: ["Pallet Truck Repair", "Hydraulic Pump Replacement", "Overhaul Maintenance"],
+    image: "/images/products/50.jpeg"
+  },
+  {
+    id: "hpt-part-2",
+    model: "Item 2",
+    name: "Handle Assembly",
+    category: "pallet-truck-parts",
+    description: "Ergonomic 3-position lever control handle bar assembly for hydraulic hand pallet trucks.",
+    sizes: ["Standard Ergonomic Length"],
+    features: ["3-Position Control Lever (Raise/Neutral/Lower)", "Heavy Steel Tube", "Rubber Grip Handle"],
+    applications: ["Pallet Truck Maintenance", "Handle Replacement"],
+    image: "/images/products/46.jpeg"
+  },
+  {
+    id: "hpt-part-3",
+    model: "Item 3",
+    name: "Oil Seal Kit",
+    category: "pallet-truck-parts",
+    description: "High-durability hydraulic pump oil seal kit to prevent fluid leakage in 31.5mm and 35mm piston cylinders.",
+    sizes: ["Size: 31.5 mm", "35 mm"],
+    features: ["Polyurethane Oil Seals", "Dust Wipers & O-Rings", "Pressure-Resistant Seals"],
+    applications: ["Hydraulic Leak Repair", "Pump Overhauling"],
+    image: "/images/products/42.jpeg"
+  },
+  {
+    id: "hpt-part-4",
+    model: "Item 4",
+    name: "Bracket / Glant",
+    category: "pallet-truck-parts",
+    description: "Heavy-duty cast steel pump bracket glant connector for 2.5T, 3T, and 5T hydraulic pallet truck lifting linkages.",
+    loadCapacity: "2.5 Ton / 3 Ton / 5 Ton",
+    sizes: ["Universal Fitment"],
+    features: ["High Tensile Cast Steel", "Precision Pin Holes", "Corrosion Resistant"],
+    applications: ["Pump Linkage Assembly", "Lift Mechanism Support"],
+    image: "/images/products/39.jpeg"
+  },
+  {
+    id: "hpt-part-5",
+    model: "Item 5",
+    name: "Jack Side Handle (Arm)",
+    category: "pallet-truck-parts",
+    description: "Side handle lifting arm suitable for 550mm and 685mm fork width hand pallet trucks.",
+    sizes: ["Size: 550 mm", "685 mm"],
+    features: ["Reinforced Steel Construction", "Precision Pivot Pins"],
+    applications: ["Frame Linkage Repair", "Lift Arm Replacement"],
+    image: "/images/products/35.jpeg"
+  },
+  {
+    id: "hpt-part-6",
+    model: "Item 6",
+    name: "Spring",
+    category: "pallet-truck-parts",
+    description: "High-tensile spring steel return spring for pallet truck handle sockets and pump pistons.",
+    sizes: ["Size: 91 mm", "100 mm", "110 mm"],
+    features: ["Tempered Spring Steel", "High Fatigue Strength"],
+    applications: ["Handle Return Mechanism", "Pump Reset"],
+    image: "/images/products/49.jpeg"
+  },
+  {
+    id: "hpt-part-7",
+    model: "Item 7",
+    name: "Releasing Valve",
+    category: "pallet-truck-parts",
+    description: "Precision hydraulic lowering release valve cartridge pin for controlled fork lowering.",
+    features: ["Precision Machined Valve Stem", "Leak-Free Sealing Seat"],
+    applications: ["Lowering Control Repair", "Pump Valve Maintenance"],
+    image: "/images/products/45.jpeg"
+  },
+  {
+    id: "hpt-part-8",
+    model: "Item 8",
+    name: "Jack Main Support",
+    category: "pallet-truck-parts",
+    description: "Heavy-duty cast steel main support base for hydraulic pump mounting and chassis connection.",
+    features: ["Heavy Duty Steel Casting", "Machined Mounting Flange"],
+    applications: ["Hydraulic Jack Mounting", "Pivot Base"],
+    image: "/images/products/41.jpeg"
+  },
+  {
+    id: "hpt-part-9",
+    model: "Item 9",
+    name: "Shaft (25 x 176 mm)",
+    category: "pallet-truck-parts",
+    description: "Precision ground steel pivot shaft for hand pallet truck main linkage.",
+    sizes: ["25 x 176 mm"],
+    features: ["Hardened Steel Bar", "Precision Tolerance"],
+    applications: ["Main Pivot Axle", "Chassis Linkage"],
+    image: "/images/products/38.jpeg"
+  },
+  {
+    id: "hpt-part-10",
+    model: "Item 10",
+    name: "Shaft Set",
+    category: "pallet-truck-parts",
+    description: "Hardened steel linkage pin shafts for pallet truck fork frame and lifting arm joints.",
+    sizes: ["20 x 95 mm", "20 x 140 mm", "20 x 150 mm", "20 x 167 mm"],
+    features: ["High Wear Resistance", "Pre-drilled Retaining Holes"],
+    applications: ["Fork Arm Jointing", "Frame Shaft Replacement"],
+    image: "/images/products/44.jpeg"
+  },
+  {
+    id: "hpt-part-11",
+    model: "Item 11",
+    name: "Shaft (20 x 105 mm)",
+    category: "pallet-truck-parts",
+    description: "Heavy-duty steel pivot shaft pin for pallet truck rocker arm connection.",
+    sizes: ["20 x 105 mm"],
+    features: ["Ground Finish Surface", "Dowel Pin Locking Holes"],
+    applications: ["Rocker Arm Axle", "Linkage Shaft"],
+    image: "/images/products/48.jpeg"
+  },
+  {
+    id: "hpt-part-12",
+    model: "Item 12",
+    name: "Shaft (16 x 47 / 16 x 41 mm)",
+    category: "pallet-truck-parts",
+    description: "Steel roller axle shaft set for front load wheel brackets.",
+    sizes: ["16 x 47 mm", "16 x 41 mm"],
+    features: ["Corrosion Resistant Coating", "Heavy Shear Strength"],
+    applications: ["Load Roller Axle", "Wheel Pin Replacement"],
+    image: "/images/products/34.jpeg"
+  },
+  {
+    id: "hpt-part-13",
+    model: "Item 13",
+    name: "Shaft (16 x 85 mm)",
+    category: "pallet-truck-parts",
+    description: "Hardened steel axle shaft pin for front load roller wheels.",
+    sizes: ["16 x 85 mm"],
+    features: ["Precision Diameter", "Heavy Duty Steel"],
+    applications: ["Front Load Wheel Axle"],
+    image: "/images/products/40.jpeg"
+  },
+  {
+    id: "hpt-part-14",
+    model: "Item 14",
+    name: "Shaft (16 x 50 mm)",
+    category: "pallet-truck-parts",
+    description: "Flanged head precision steel shaft pin for hydraulic lifting linkage.",
+    sizes: ["16 x 50 mm"],
+    features: ["Retaining Head Design", "Hardened Steel"],
+    applications: ["Lift Linkage Hinge Pin"],
+    image: "/images/products/37.jpeg"
+  },
+  {
+    id: "hpt-part-15",
+    model: "Item 15",
+    name: "Main Piston",
+    category: "pallet-truck-parts",
+    description: "Hydraulic main lift piston rod engineered for smooth lifting under heavy load.",
+    sizes: ["32 x 265 mm", "32 x 285 mm", "35 x 285 mm"],
+    features: ["Polished Surface Finish", "Hardened Steel Core"],
+    applications: ["Hydraulic Pump Ram Replacement"],
+    image: "/images/products/33.jpeg"
+  },
+  {
+    id: "hpt-part-16",
+    model: "Item 16",
+    name: "Hard Chrome Piston",
+    category: "pallet-truck-parts",
+    description: "Hard chrome plated smooth piston rod for hydraulic plunger unit.",
+    sizes: ["18 x 100 mm"],
+    features: ["Hard Chrome Plated Layer", "Corrosion & Scratch Resistant"],
+    applications: ["Plunger Piston Rod"],
+    image: "/images/products/47.jpeg"
+  },
+  {
+    id: "hpt-part-17",
+    model: "Item 17",
+    name: "Thread Chapla / Thread Rod",
+    category: "pallet-truck-parts",
+    description: "Threaded push rod connector eyelet and chapla bracket for fork height adjustment.",
+    features: ["Heavy Duty Threading", "Forged Eyelet Joint"],
+    applications: ["Push Rod Height Adjustment"],
+    image: "/images/products/43.jpeg"
+  },
+  {
+    id: "hpt-part-18",
+    model: "Item 18",
+    name: "Small Wheel Stand",
+    category: "pallet-truck-parts",
+    description: "Guide entry roller bracket stand for smooth pallet entry and exit without fork scuffing.",
+    features: ["Durable Steel Plate", "Pre-drilled Mounting"],
+    applications: ["Pallet Entry Roller Guide"],
+    image: "/images/products/51.jpeg"
+  },
+  {
+    id: "hpt-part-19",
+    model: "Item 19",
+    name: "Lever Plate / Foot Control Arm",
+    category: "pallet-truck-parts",
+    description: "Cast iron foot release pedal arm lever plate for hand pallet truck release system.",
+    features: ["Durable Cast Iron", "Foot Pedal Lever Pad"],
+    applications: ["Foot Lowering Control"],
+    image: "/images/products/36.jpeg"
+  },
+  {
+    id: "hpt-part-20",
+    model: "Item 20",
+    name: "Pressure Roller & Pressure Shaft",
+    category: "pallet-truck-parts",
+    description: "Steel pressure roller and matching pressure shaft set for handle socket pump engagement.",
+    sizes: ["Roller: 25x22x16 mm, 25x22x12 mm", "Shaft: 16x60 mm, 12x60 mm"],
+    features: ["Hardened Steel Roller", "Smooth Piston Pushing"],
+    applications: ["Handle Socket Roller Assembly"],
+    image: "/images/products/32.jpeg"
+  },
+  {
+    id: "hpt-part-21",
+    model: "Item 21",
+    name: "Maini Shaft",
+    category: "pallet-truck-parts",
+    description: "Special flanged main shaft pin designed for Maini brand hand pallet trucks.",
+    features: ["Flanged Locking Head", "Exact Maini OEM Specs"],
+    applications: ["Maini Pallet Truck Overhaul"],
+    image: "/images/products/72.jpeg"
+  },
+  {
+    id: "hpt-part-22",
+    model: "Item 22",
+    name: "Releasing Spare Kit",
+    category: "pallet-truck-parts",
+    description: "Complete release valve overhaul kit including springs, steel balls, guide pins, and sealing seats.",
+    features: ["Full 8-Piece Valve Rebuild Kit", "High Precision Components"],
+    applications: ["Complete Release Valve Repair"],
+    image: "/images/products/67.jpeg"
+  },
+  {
+    id: "hpt-part-23",
+    model: "Item 23",
+    name: "Chain + Bolt / Bracket Set",
+    category: "pallet-truck-parts",
+    description: "Control handle chain link with adjusting bolt and eyelet bracket for lever linkage.",
+    features: ["High Tensile Roller Chain", "Adjustable Threaded Stud"],
+    applications: ["Handle Lever Connection"],
+    image: "/images/products/62.jpeg"
+  },
+  {
+    id: "hpt-part-24",
+    model: "Item 24",
+    name: "Spring Dubby (Cap)",
+    category: "pallet-truck-parts",
+    description: "Steel spring retaining cup cap for handle spring housing.",
+    features: ["Deep Drawn Steel Cup", "Spring Alignment Ring"],
+    applications: ["Handle Spring Retainer"],
+    image: "/images/products/57.jpeg"
+  },
+  {
+    id: "hpt-part-25",
+    model: "Item 25",
+    name: "S Lock / Dowel / Washer Set",
+    category: "pallet-truck-parts",
+    description: "Retaining snap locks, spring dowel pins, and washer hardware set for axle shaft securing.",
+    sizes: ["Dowel: 5 x 35 mm", "8 x 50 mm"],
+    features: ["Hardened Spring Steel Pins", "Corrosion Resistant Washers"],
+    applications: ["Axle Locking & Retaining"],
+    image: "/images/products/71.jpeg"
+  },
+  {
+    id: "hpt-part-26",
+    model: "Item 26",
+    name: "Bracket Set (Tandem Roller)",
+    category: "pallet-truck-parts",
+    description: "Complete tandem load wheel rocker arm bracket assembly with twin PU rollers.",
+    features: ["Forged Steel Rocker Arm", "Tandem Wheel Mounting"],
+    applications: ["Front Load Wheel Bracket"],
+    image: "/images/products/66.jpeg"
+  },
+  {
+    id: "hpt-part-27",
+    model: "Item 27",
+    name: "Long Pipe (Push Rod)",
+    category: "pallet-truck-parts",
+    description: "Tubular steel long push rod connecting front load wheel rocker arms to rear pump linkage.",
+    sizes: ["Length: 850 mm", "930 mm"],
+    features: ["Heavy Wall Steel Tube", "Welded End Clevis Joints"],
+    applications: ["Fork Push Rod Mechanism"],
+    image: "/images/products/61.jpeg"
+  },
+  {
+    id: "hpt-part-28",
+    model: "Item 28",
+    name: "Handle Bush Brass",
+    category: "pallet-truck-parts",
+    description: "Self-lubricating split bronze/brass bushing for handle joint wear protection.",
+    features: ["High Grade Brass/Bronze Alloy", "Split Design for Easy Press Fit"],
+    applications: ["Handle Pivot Sleeve"],
+    image: "/images/products/56.jpeg"
+  },
+  {
+    id: "hpt-part-29",
+    model: "Item 29",
+    name: "Circlip Washer Set",
+    category: "pallet-truck-parts",
+    description: "External and internal circlip snap ring washer set for shaft locking.",
+    sizes: ["Sizes: A55", "A20", "A15", "B26"],
+    features: ["Spring Steel Construction", "Reliable Axle Locking"],
+    applications: ["Shaft Retaining Rings"],
+    image: "/images/products/70.jpeg"
+  },
+  {
+    id: "hpt-part-30",
+    model: "Item 30",
+    name: "CI PU Steering Wheel",
+    category: "pallet-truck-parts",
+    description: "Cast Iron hub with heavy Polyurethane tread rear steering wheel.",
+    sizes: ["150 x 50 mm", "180 x 50 mm", "200 x 50 mm"],
+    features: ["Heavy Duty CI Core", "Red Polyurethane Tread", "Dual Sealed Bearings"],
+    applications: ["Rear Steering Wheel Replacement"],
+    image: "/images/products/65.jpeg"
+  },
+  {
+    id: "hpt-part-31",
+    model: "Item 31",
+    name: "Nylon Steering Wheel",
+    category: "pallet-truck-parts",
+    description: "High-density white virgin nylon steering wheel for chemical & cleanroom environments.",
+    sizes: ["150 x 50 mm", "180 x 50 mm", "200 x 50 mm"],
+    features: ["100% Virgin Nylon", "Chemical & Water Resistant", "Smooth Rolling"],
+    applications: ["Pharma & Food Plant Pallet Trucks"],
+    image: "/images/products/60.jpeg"
+  },
+  {
+    id: "hpt-part-32",
+    model: "Item 32",
+    name: "PPCP Steering Wheel",
+    category: "pallet-truck-parts",
+    description: "Polypropylene Copolymer (PPCP) lightweight durable steering wheel.",
+    sizes: ["150 x 50 mm", "180 x 50 mm", "200 x 50 mm"],
+    features: ["Impact Resistant PPCP", "Economy Standard Usage"],
+    applications: ["Standard Warehouse Pallet Trucks"],
+    image: "/images/products/55.jpeg"
+  },
+  {
+    id: "hpt-part-33",
+    model: "Item 33",
+    name: "CI PU Load Wheel",
+    category: "pallet-truck-parts",
+    description: "Cast Iron core Polyurethane coated front load roller wheel.",
+    sizes: ["70 x 80 mm"],
+    features: ["Cast Iron Core", "Red Polyurethane Tread", "Heavy Load Rating"],
+    applications: ["Front Tandem Load Rollers"],
+    image: "/images/products/69.jpeg"
+  },
+  {
+    id: "hpt-part-34",
+    model: "Item 34",
+    name: "Nylon Load Wheel",
+    category: "pallet-truck-parts",
+    description: "Solid virgin nylon front load roller wheel for smooth non-marking movement.",
+    sizes: ["70 x 80 mm"],
+    features: ["Non-Marking White Nylon", "Low Rolling Resistance"],
+    applications: ["Cleanroom & Epoxy Floor Loading"],
+    image: "/images/products/64.jpeg"
+  },
+  {
+    id: "hpt-part-35",
+    model: "Item 35",
+    name: "PPCP Load Wheel",
+    category: "pallet-truck-parts",
+    description: "Polypropylene copolymer front load roller wheel for standard industrial use.",
+    sizes: ["70 x 80 mm"],
+    features: ["Durable PPCP Molded Body", "Precision Bearing Bore"],
+    applications: ["Front Load Wheel Replacement"],
+    image: "/images/products/59.jpeg"
+  },
+  {
+    id: "hpt-part-36",
+    model: "Item 36",
+    name: "Small Wheel / Dust Cap",
+    category: "pallet-truck-parts",
+    description: "Protective wheel dust cap covers to prevent dirt entering wheel bearings.",
+    features: ["Snap-fit Protective Cap", "Grease Retention"],
+    applications: ["Wheel Bearing Protection"],
+    image: "/images/products/54.jpeg"
+  },
+  {
+    id: "hpt-part-37",
+    model: "Item 37",
+    name: "Planjar (Piston Bush)",
+    category: "pallet-truck-parts",
+    description: "Threaded steel/brass plunger piston guide bushing for hydraulic pump head.",
+    features: ["Precision Internal Threading", "Machined Seal Groove"],
+    applications: ["Hydraulic Cylinder Plunger Guide"],
+    image: "/images/products/68.jpeg"
+  },
+  {
+    id: "hpt-part-38",
+    model: "Item 38",
+    name: "Bearing Set",
+    category: "pallet-truck-parts",
+    description: "Sealed deep groove ball bearings and thrust bearings for wheel and steering head.",
+    sizes: ["6204 2RS", "6204 ZZ", "6205 ZZ", "Thrust Bearing 51111"],
+    features: ["High Chrome Steel", "Rubber / Metal Shielded"],
+    applications: ["Wheel & Steering Overhaul"],
+    image: "/images/products/63.jpeg"
+  },
+  {
+    id: "hpt-part-39",
+    model: "Item 39",
+    name: "Bleed Spring / Shaft Bush Set",
+    category: "pallet-truck-parts",
+    description: "Air bleed valve spring, 19mm steel ball, and shaft bushing set for hydraulic pump.",
+    sizes: ["19 mm Steel Ball & Spring"],
+    features: ["Precision Steel Ball", "Tempered Air Bleed Spring"],
+    applications: ["Hydraulic Pump Air Bleeding"],
+    image: "/images/products/58.jpeg"
+  },
+  {
+    id: "hpt-part-40",
+    model: "Item 40",
+    name: "Manual Stacker Cylinder",
+    category: "pallet-truck-parts",
+    description: "Complete hydraulic lift cylinder assembly for manual stacker vertical lifting.",
+    loadCapacity: "1000 kg - 2000 kg",
+    features: ["Heavy Cylinder Bore", "Polished Lift Ram", "Foot & Hand Pump Port"],
+    applications: ["Manual Hydraulic Stacker Overhaul"],
+    image: "/images/products/53.jpeg"
+  },
+
+  // ==========================================
+  // SHEET 6: FULLY ELECTRIC STACKER SPARE PARTS
+  // ==========================================
+  {
+    id: "es-jss-1",
+    model: "JSS-1",
+    name: "Electronic Throttle & Accelerator",
+    category: "electric-stacker-parts",
+    description: "Precision electronic speed control throttle pedal and accelerator box for electric stackers & BOPT.",
+    features: ["Solid State Potentiometer", "Smooth Speed Modulation", "Dust & Moisture Sealed"],
+    applications: ["Electric Stacker Drive Control", "BOPT Accelerator Replacement"],
+    image: ""
+  },
+  {
+    id: "es-jss-2",
+    model: "JSS-2",
+    name: "Battery Connector",
+    category: "electric-stacker-parts",
+    description: "Heavy duty industrial battery plug connector (160A / 320A) with handles for electric equipment.",
+    sizes: ["160 Amp", "320 Amp"],
+    features: ["Silver-Plated Copper Contacts", "High Impact Polycarbonate Housing", "Ergonomic Handle"],
+    applications: ["Traction Battery Charging & Connection"],
+    image: ""
+  },
+  {
+    id: "es-jss-3",
+    model: "JSS-3",
+    name: "Curtis Speed Controllers",
+    category: "electric-stacker-parts",
+    description: "Genuine Curtis programmable motor speed controller units (1212 / 1232 / 1234 series) for electric stackers.",
+    features: ["Programmable Speed & Acceleration", "Thermal Protection", "Regenerative Braking"],
+    applications: ["Electric Stacker Motor Speed Regulation"],
+    image: "",
+    isPopular: true
+  },
+  {
+    id: "es-jss-4",
+    model: "JSS-4",
+    name: "DC Controls & Solenoids",
+    category: "electric-stacker-parts",
+    description: "Heavy duty DC contactor solenoids (24V / 36V / 48V) for drive and pump motor switching.",
+    sizes: ["24V DC", "36V DC", "48V DC"],
+    features: ["Silver Alloy Contacts", "High Current Capacity", "Continuous Duty Coil"],
+    applications: ["Main Drive & Pump Motor Switching"],
+    image: ""
+  },
+  {
+    id: "es-jss-5",
+    model: "JSS-5",
+    name: "EM Brakes (Electromagnetic Brake)",
+    category: "electric-stacker-parts",
+    description: "Fail-safe electromagnetic disc brake assembly for electric stacker drive motors.",
+    sizes: ["24V DC Electromagnetic Brake"],
+    features: ["Fail-Safe Spring Applied", "High Torque Retaining", "Fast Engagement"],
+    applications: ["Traction Motor Emergency Braking"],
+    image: ""
+  },
+  {
+    id: "es-jss-6",
+    model: "JSS-6",
+    name: "Encoder Sensor Type",
+    category: "electric-stacker-parts",
+    description: "Magnetic speed and direction encoder sensor for traction motor speed regulation.",
+    features: ["High Resolution Pulse Output", "Vibration Resistant Housing"],
+    applications: ["Drive Motor Speed Feedback"],
+    image: ""
+  },
+  {
+    id: "es-jss-7",
+    model: "JSS-7",
+    name: "Encoder SME",
+    category: "electric-stacker-parts",
+    description: "SME type bearing encoder sensor unit for AC drive motor speed control.",
+    features: ["Integrated Bearing Sensor Ring", "Shielded Cable Lead"],
+    applications: ["SME Controller AC Motor Feedback"],
+    image: ""
+  },
+  {
+    id: "es-jss-8",
+    model: "JSS-8",
+    name: "Tiller Handle Assembly",
+    category: "electric-stacker-parts",
+    description: "Ergonomic control tiller head with butterfly switches, horn, and belly emergency reverse button.",
+    features: ["Butterfly Speed Rockers", "Safety Belly Reversing Switch", "Dual Lift/Lower Switches"],
+    applications: ["Walkie Electric Stacker Control Head"],
+    image: "",
+    isPopular: true
+  },
+  {
+    id: "es-jss-11",
+    model: "JSS-11",
+    name: "Electronic Throttle & Accelerator Module",
+    category: "electric-stacker-parts",
+    description: "Solid-state electronic potentiometer accelerator switch module.",
+    features: ["Linear Voltage Output", "Rugged Mounting Frame"],
+    applications: ["Foot Pedal / Hand Throttle Replacement"],
+    image: ""
+  },
+  {
+    id: "es-js-12",
+    model: "JS-12",
+    name: "Bearing Encoder",
+    category: "electric-stacker-parts",
+    description: "Integrated bearing speed encoder sensor for high precision motor speed feedback.",
+    features: ["Sealed Bearing Unit", "High Precision Sensor Board"],
+    applications: ["Electric Stacker Motor Speed Sensing"],
+    image: ""
+  },
+  {
+    id: "es-js-11-wheels",
+    model: "JS-11",
+    name: "Stacker Polyurethane Drive & Load Wheels",
+    category: "electric-stacker-parts",
+    description: "Heavy duty yellow Vulkollan / Polyurethane drive wheels and castor wheels for electric stackers.",
+    sizes: ["230x75 mm Drive", "85x85 mm Load", "150x50 mm Castor"],
+    features: ["High Traction Polyurethane", "Heavy Load Capacity", "Oil & Wear Resistant"],
+    applications: ["Electric Stacker Wheel Replacement"],
+    image: ""
+  },
+  {
+    id: "es-js-12-light",
+    model: "JS-12",
+    name: "Blue Safety Spot Light",
+    category: "electric-stacker-parts",
+    description: "High visibility LED blue spot warning safety projection light for stackers and forklifts.",
+    features: ["10V-80V Multi-Voltage", "High Power Blue LED", "Waterproof IP67 Housing"],
+    applications: ["Warehouse Pedestrian Safety Warning"],
+    image: ""
+  },
+
+  // ==========================================
+  // SHEET 7: FORKLIFT SPARE PARTS & ACCESSORIES
+  // ==========================================
+  {
+    id: "fl-jss-1",
+    model: "JSS-1",
+    name: "Finger Access Control Kit",
+    category: "forklift-parts",
+    description: "Biometric fingerprint identity key access control starter module for forklift ignition security.",
+    features: ["Biometric Fingerprint Scanner", "Operator Authorization Memory", "Relay Output Ignition Control"],
+    applications: ["Forklift Access Control", "Fleet Operator Safety"],
+    image: ""
+  },
+  {
+    id: "fl-jss-2",
+    model: "JSS-2",
+    name: "Flasher / Beacon Light",
+    category: "forklift-parts",
+    description: "Amber revolving LED strobe warning beacon light (12V-80V) for forklift safety.",
+    sizes: ["12V - 80V Multi Voltage"],
+    features: ["Super Bright Amber LEDs", "Multiple Flash Patterns", "Impact Resistant Dome"],
+    applications: ["Forklift Visual Warning Signal"],
+    image: "",
+    isPopular: true
+  },
+  {
+    id: "fl-jss-3",
+    model: "JSS-3",
+    name: "Red Zone Light / Blue Spot Light",
+    category: "forklift-parts",
+    description: "Pedestrian safety red zone boundary laser light and blue spot spotlight set.",
+    features: ["High Intensity Red Line & Blue Spot", "Heavy Duty Die-Cast Aluminum Base"],
+    applications: ["Forklift Perimeter Warning Safety Zone"],
+    image: ""
+  },
+  {
+    id: "fl-jss-4",
+    model: "JSS-4",
+    name: "Indicator Light",
+    category: "forklift-parts",
+    description: "Front and rear twin-lens LED turn signal and position indicator light assembly.",
+    features: ["Dual Amber/Clear Lens", "Vibration Proof LED Board"],
+    applications: ["Forklift Turn & Brake Signal"],
+    image: ""
+  },
+  {
+    id: "fl-jss-5",
+    model: "JSS-5",
+    name: "LED Headlight",
+    category: "forklift-parts",
+    description: "High intensity flood LED work headlight for low-light warehouse & yard operations.",
+    features: ["Heavy Duty Square LED Headlamp", "Stainless Steel Bracket"],
+    applications: ["Forklift Front Headlight Replacement"],
+    image: ""
+  },
+  {
+    id: "fl-jss-6",
+    model: "JSS-6",
+    name: "Fork Camera System",
+    category: "forklift-parts",
+    description: "Mast-mounted fork tine tip camera for high racking visibility and accurate pallet entry.",
+    features: ["Wireless HD Camera Unit", "Wide Angle Lens", "Built-in Night Vision IR"],
+    applications: ["High Rack Stacking Safety"],
+    image: ""
+  },
+  {
+    id: "fl-jss-7",
+    model: "JSS-7",
+    name: "Reverse Camera With Display",
+    category: "forklift-parts",
+    description: "Heavy-duty waterproof rear view camera with cabin LCD display monitor.",
+    features: ["7-Inch Color LCD Monitor", "Waterproof Rear Camera", "Automatic Reversing Trigger"],
+    applications: ["Forklift Rear View & Blind Spot Elimination"],
+    image: "",
+    isPopular: true
+  },
+  {
+    id: "fl-jss-8",
+    model: "JSS-8",
+    name: "Horn / Reverse Horn",
+    category: "forklift-parts",
+    description: "High-decibel dual tone warning horn and automatic reverse beeper alarm.",
+    features: ["105dB High Decibel Warning", "Waterproof Housing"],
+    applications: ["Forklift Audio Hazard Warning"],
+    image: ""
+  },
+  {
+    id: "fl-jss-9",
+    model: "JSS-9",
+    name: "Safety Helmet",
+    category: "forklift-parts",
+    description: "HDPE impact-resistant industrial safety hard hat helmet with adjustable ratchet suspension.",
+    features: ["High Density Polyethylene Shell", "Adjustable Chin Strap & Ratchet"],
+    applications: ["Warehouse & Factory Personal Protective Equipment (PPE)"],
+    image: ""
+  },
+  {
+    id: "fl-jss-10",
+    model: "JSS-10",
+    name: "Forklift Tires (Solid & Pneumatic)",
+    category: "forklift-parts",
+    description: "Heavy load solid resilient rubber tires and pneumatic tires for all forklift tonnage.",
+    sizes: ["6.00-9", "7.00-12", "28x9-15", "Custom Sizes"],
+    features: ["Puncture-Proof Solid Rubber Option", "Deep Tread Compound for Long Life"],
+    applications: ["Forklift Wheel Replacement"],
+    image: ""
+  },
+  {
+    id: "fl-jss-11",
+    model: "JSS-11",
+    name: "Seat Belt With Interlock Display",
+    category: "forklift-parts",
+    description: "Retractable driver seatbelt equipped with ignition safety interlock switch.",
+    features: ["Emergency Locking Retractor (ELR)", "Integrated Safety Switch"],
+    applications: ["Forklift Operator Safety Compliance"],
+    image: ""
+  },
+  {
+    id: "fl-jss-12",
+    model: "JSS-12",
+    name: "Fire Extinguisher",
+    category: "forklift-parts",
+    description: "ABC dry powder fire extinguisher with quick-release mounting bracket for forklift safety.",
+    sizes: ["1 kg", "2 kg ABC Powder"],
+    features: ["Pressure Gauge Included", "Heavy Duty Vehicle Mounting Bracket"],
+    applications: ["Forklift Emergency Fire Safety"],
+    image: ""
+  },
+  {
+    id: "fl-jss-13",
+    model: "JSS-13",
+    name: "Filter (Hydraulic & Engine)",
+    category: "forklift-parts",
+    description: "Complete range of hydraulic return, oil, fuel, and air intake filters for forklifts.",
+    features: ["High Efficiency Filtration", "Extends Engine & Hydraulic Life"],
+    applications: ["Forklift Preventive Maintenance"],
+    image: ""
+  },
+  {
+    id: "fl-jss-14",
+    model: "JSS-14",
+    name: "Fork Tines (Forklift Forks)",
+    category: "forklift-parts",
+    description: "Class II & Class III heavy duty forged alloy steel forklift fork tines.",
+    sizes: ["Length: 1070 mm", "1220 mm", "1500 mm"],
+    features: ["High Grade Forged Steel", "Standard ITA Hook Mounting"],
+    applications: ["Forklift Pallet Lifting Tines"],
+    image: ""
   }
 ];
 
