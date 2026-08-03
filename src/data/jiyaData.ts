@@ -1527,7 +1527,7 @@ export const PRODUCTS: Product[] = [
     description: "Precision electronic speed control throttle pedal and accelerator box for electric stackers & BOPT.",
     features: ["Solid State Potentiometer", "Smooth Speed Modulation", "Dust & Moisture Sealed"],
     applications: ["Electric Stacker Drive Control", "BOPT Accelerator Replacement"],
-    image: ""
+    image: "/images/products/88.jpeg"
   },
   {
     id: "es-jss-2",
@@ -1538,7 +1538,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["160 Amp", "320 Amp"],
     features: ["Silver-Plated Copper Contacts", "High Impact Polycarbonate Housing", "Ergonomic Handle"],
     applications: ["Traction Battery Charging & Connection"],
-    image: ""
+    image: "/images/products/96.jpeg"
   },
   {
     id: "es-jss-3",
@@ -1548,7 +1548,7 @@ export const PRODUCTS: Product[] = [
     description: "Genuine Curtis programmable motor speed controller units (1212 / 1232 / 1234 series) for electric stackers.",
     features: ["Programmable Speed & Acceleration", "Thermal Protection", "Regenerative Braking"],
     applications: ["Electric Stacker Motor Speed Regulation"],
-    image: "",
+    image: "/images/products/94.jpeg",
     isPopular: true
   },
   {
@@ -1560,7 +1560,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["24V DC", "36V DC", "48V DC"],
     features: ["Silver Alloy Contacts", "High Current Capacity", "Continuous Duty Coil"],
     applications: ["Main Drive & Pump Motor Switching"],
-    image: ""
+    image: "/images/products/92.jpeg"
   },
   {
     id: "es-jss-5",
@@ -1571,7 +1571,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["24V DC Electromagnetic Brake"],
     features: ["Fail-Safe Spring Applied", "High Torque Retaining", "Fast Engagement"],
     applications: ["Traction Motor Emergency Braking"],
-    image: ""
+    image: "/images/products/97.jpeg"
   },
   {
     id: "es-jss-6",
@@ -1581,7 +1581,7 @@ export const PRODUCTS: Product[] = [
     description: "Magnetic speed and direction encoder sensor for traction motor speed regulation.",
     features: ["High Resolution Pulse Output", "Vibration Resistant Housing"],
     applications: ["Drive Motor Speed Feedback"],
-    image: ""
+    image: "/images/products/95.jpeg"
   },
   {
     id: "es-jss-7",
@@ -1591,7 +1591,7 @@ export const PRODUCTS: Product[] = [
     description: "SME type bearing encoder sensor unit for AC drive motor speed control.",
     features: ["Integrated Bearing Sensor Ring", "Shielded Cable Lead"],
     applications: ["SME Controller AC Motor Feedback"],
-    image: ""
+    image: "/images/products/93.jpeg"
   },
   {
     id: "es-jss-8",
@@ -1601,7 +1601,7 @@ export const PRODUCTS: Product[] = [
     description: "Ergonomic control tiller head with butterfly switches, horn, and belly emergency reverse button.",
     features: ["Butterfly Speed Rockers", "Safety Belly Reversing Switch", "Dual Lift/Lower Switches"],
     applications: ["Walkie Electric Stacker Control Head"],
-    image: "",
+    image: "/images/products/91.jpeg",
     isPopular: true
   },
   {
@@ -1612,7 +1612,7 @@ export const PRODUCTS: Product[] = [
     description: "Solid-state electronic potentiometer accelerator switch module.",
     features: ["Linear Voltage Output", "Rugged Mounting Frame"],
     applications: ["Foot Pedal / Hand Throttle Replacement"],
-    image: ""
+    image: "/images/products/98.jpeg"
   },
   {
     id: "es-js-12",
@@ -1622,7 +1622,7 @@ export const PRODUCTS: Product[] = [
     description: "Integrated bearing speed encoder sensor for high precision motor speed feedback.",
     features: ["Sealed Bearing Unit", "High Precision Sensor Board"],
     applications: ["Electric Stacker Motor Speed Sensing"],
-    image: ""
+    image: "/images/products/90.jpeg"
   },
   {
     id: "es-js-11-wheels",
@@ -1633,7 +1633,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["230x75 mm Drive", "85x85 mm Load", "150x50 mm Castor"],
     features: ["High Traction Polyurethane", "Heavy Load Capacity", "Oil & Wear Resistant"],
     applications: ["Electric Stacker Wheel Replacement"],
-    image: ""
+    image: "/images/products/89.jpeg"
   },
   {
     id: "es-js-12-light",
@@ -1643,7 +1643,7 @@ export const PRODUCTS: Product[] = [
     description: "High visibility LED blue spot warning safety projection light for stackers and forklifts.",
     features: ["10V-80V Multi-Voltage", "High Power Blue LED", "Waterproof IP67 Housing"],
     applications: ["Warehouse Pedestrian Safety Warning"],
-    image: ""
+    image: "/images/products/87.jpeg"
   },
 
   // ==========================================
@@ -1657,7 +1657,7 @@ export const PRODUCTS: Product[] = [
     description: "Biometric fingerprint identity key access control starter module for forklift ignition security.",
     features: ["Biometric Fingerprint Scanner", "Operator Authorization Memory", "Relay Output Ignition Control"],
     applications: ["Forklift Access Control", "Fleet Operator Safety"],
-    image: ""
+    image: "/images/products/86.jpeg"
   },
   {
     id: "fl-jss-2",
@@ -1668,7 +1668,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["12V - 80V Multi Voltage"],
     features: ["Super Bright Amber LEDs", "Multiple Flash Patterns", "Impact Resistant Dome"],
     applications: ["Forklift Visual Warning Signal"],
-    image: "",
+    image: "/images/products/84.jpeg",
     isPopular: true
   },
   {
@@ -1679,7 +1679,7 @@ export const PRODUCTS: Product[] = [
     description: "Pedestrian safety red zone boundary laser light and blue spot spotlight set.",
     features: ["High Intensity Red Line & Blue Spot", "Heavy Duty Die-Cast Aluminum Base"],
     applications: ["Forklift Perimeter Warning Safety Zone"],
-    image: ""
+    image: "/images/products/82.jpeg"
   },
   {
     id: "fl-jss-4",
@@ -1689,7 +1689,7 @@ export const PRODUCTS: Product[] = [
     description: "Front and rear twin-lens LED turn signal and position indicator light assembly.",
     features: ["Dual Amber/Clear Lens", "Vibration Proof LED Board"],
     applications: ["Forklift Turn & Brake Signal"],
-    image: ""
+    image: "/images/products/80.jpeg"
   },
   {
     id: "fl-jss-5",
@@ -1699,7 +1699,7 @@ export const PRODUCTS: Product[] = [
     description: "High intensity flood LED work headlight for low-light warehouse & yard operations.",
     features: ["Heavy Duty Square LED Headlamp", "Stainless Steel Bracket"],
     applications: ["Forklift Front Headlight Replacement"],
-    image: ""
+    image: "/images/products/85.jpeg"
   },
   {
     id: "fl-jss-6",
@@ -1709,7 +1709,7 @@ export const PRODUCTS: Product[] = [
     description: "Mast-mounted fork tine tip camera for high racking visibility and accurate pallet entry.",
     features: ["Wireless HD Camera Unit", "Wide Angle Lens", "Built-in Night Vision IR"],
     applications: ["High Rack Stacking Safety"],
-    image: ""
+    image: "/images/products/83.jpeg"
   },
   {
     id: "fl-jss-7",
@@ -1719,7 +1719,7 @@ export const PRODUCTS: Product[] = [
     description: "Heavy-duty waterproof rear view camera with cabin LCD display monitor.",
     features: ["7-Inch Color LCD Monitor", "Waterproof Rear Camera", "Automatic Reversing Trigger"],
     applications: ["Forklift Rear View & Blind Spot Elimination"],
-    image: "",
+    image: "/images/products/81.jpeg",
     isPopular: true
   },
   {
@@ -1730,7 +1730,7 @@ export const PRODUCTS: Product[] = [
     description: "High-decibel dual tone warning horn and automatic reverse beeper alarm.",
     features: ["105dB High Decibel Warning", "Waterproof Housing"],
     applications: ["Forklift Audio Hazard Warning"],
-    image: ""
+    image: "/images/products/79.jpeg"
   },
   {
     id: "fl-jss-9",
@@ -1740,7 +1740,7 @@ export const PRODUCTS: Product[] = [
     description: "HDPE impact-resistant industrial safety hard hat helmet with adjustable ratchet suspension.",
     features: ["High Density Polyethylene Shell", "Adjustable Chin Strap & Ratchet"],
     applications: ["Warehouse & Factory Personal Protective Equipment (PPE)"],
-    image: ""
+    image: "/images/products/78.jpeg"
   },
   {
     id: "fl-jss-10",
@@ -1751,7 +1751,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["6.00-9", "7.00-12", "28x9-15", "Custom Sizes"],
     features: ["Puncture-Proof Solid Rubber Option", "Deep Tread Compound for Long Life"],
     applications: ["Forklift Wheel Replacement"],
-    image: ""
+    image: "/images/products/76.jpeg"
   },
   {
     id: "fl-jss-11",
@@ -1761,7 +1761,7 @@ export const PRODUCTS: Product[] = [
     description: "Retractable driver seatbelt equipped with ignition safety interlock switch.",
     features: ["Emergency Locking Retractor (ELR)", "Integrated Safety Switch"],
     applications: ["Forklift Operator Safety Compliance"],
-    image: ""
+    image: "/images/products/74.jpeg"
   },
   {
     id: "fl-jss-12",
@@ -1772,7 +1772,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["1 kg", "2 kg ABC Powder"],
     features: ["Pressure Gauge Included", "Heavy Duty Vehicle Mounting Bracket"],
     applications: ["Forklift Emergency Fire Safety"],
-    image: ""
+    image: "/images/products/73.jpeg"
   },
   {
     id: "fl-jss-13",
@@ -1782,7 +1782,7 @@ export const PRODUCTS: Product[] = [
     description: "Complete range of hydraulic return, oil, fuel, and air intake filters for forklifts.",
     features: ["High Efficiency Filtration", "Extends Engine & Hydraulic Life"],
     applications: ["Forklift Preventive Maintenance"],
-    image: ""
+    image: "/images/products/77.jpeg"
   },
   {
     id: "fl-jss-14",
@@ -1793,7 +1793,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["Length: 1070 mm", "1220 mm", "1500 mm"],
     features: ["High Grade Forged Steel", "Standard ITA Hook Mounting"],
     applications: ["Forklift Pallet Lifting Tines"],
-    image: ""
+    image: "/images/products/75.jpeg"
   }
 ];
 
