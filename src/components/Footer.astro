@@ -9,12 +9,13 @@ import { COMPANY_INFO, PRODUCT_CATEGORIES } from '../data/jiyaData';
       <!-- Col 1: Brand Info -->
       <div class="lg:col-span-2 space-y-4">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-brand-blue text-white font-extrabold text-xl flex items-center justify-center rounded border border-amber-500">
-            J
-          </div>
+          <a href="/" class="bg-white p-1.5 rounded-lg shadow-md border border-slate-700/50 inline-block">
+            <img src="/images/logo.png" alt="JIYA Sales & Services Logo" class="h-14 w-auto object-contain" />
+          </a>
           <div>
-            <span class="text-xl font-black text-white tracking-tight font-heading">JIYA</span>
+            <span class="text-xl font-black text-white tracking-tight font-heading block">JIYA</span>
             <span class="text-amber-400 text-xs font-bold block">Sales &amp; Services</span>
+            <span class="text-slate-400 text-[10px] italic">Step To Success</span>
           </div>
         </div>
 
@@ -86,12 +87,16 @@ import { COMPANY_INFO, PRODUCT_CATEGORIES } from '../data/jiyaData';
         © {new Date().getFullYear()} <strong class="text-slate-300">JIYA Sales &amp; Services</strong>. All Rights Reserved. Manufactured &amp; Distributed in GIDC Vapi.
       </div>
 
-      <div class="flex items-center space-x-4">
-        <a href="/sitemap-index.xml" class="hover:text-slate-300">Sitemap</a>
-        <span>•</span>
-        <a href="/robots.txt" class="hover:text-slate-300">Robots.txt</a>
-        <span>•</span>
-        <span class="text-amber-400 font-medium">B2B GST Registered Entity</span>
+      <div class="flex items-center gap-1.5 text-[11px] text-slate-400">
+        <span>Designed &amp; Developed by</span>
+        <a 
+          href="https://www.davlabs.in/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-amber-400 hover:text-amber-300 font-bold transition-colors underline decoration-amber-500/40 underline-offset-2"
+        >
+          DAVlabs
+        </a>
       </div>
     </div>
   </div>

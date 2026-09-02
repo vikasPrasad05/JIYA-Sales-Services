@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import TrustBadges from '../components/TrustBadges.astro';
+import SparePartsBreakdown from '../components/SparePartsBreakdown.astro';
 import { COMPANY_INFO, PRODUCT_CATEGORIES, PRODUCTS } from '../data/jiyaData';
 
 // Get popular products for homepage highlight
@@ -145,6 +146,9 @@ const popularProducts = PRODUCTS.filter(p => p.isPopular).slice(0, 6);
 
     </div>
   </section>
+
+  <!-- Spare Parts Breakdown Diagrams Section -->
+  <SparePartsBreakdown />
 
   <!-- 3. Popular Products Highlights -->
   <section class="py-16 lg:py-20 bg-white border-b border-slate-200">

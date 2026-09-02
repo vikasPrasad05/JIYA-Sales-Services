@@ -9,17 +9,15 @@ const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
     <div class="flex justify-between items-center h-20">
       
       <!-- Brand Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="w-12 h-12 bg-yellow-400 text-slate-950 font-black text-2xl flex items-center justify-center rounded border-2 border-yellow-500 shadow-md group-hover:bg-yellow-300 transition-colors">
-          J
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-2xl font-black tracking-tight text-slate-900 font-heading">JIYA </span>
-            <span class="bg-yellow-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded border border-yellow-500 uppercase tracking-wide shadow-xs">
-              Sales &amp; Services
-            </span>
-          </div>
+      <a href="/" class="flex items-center gap-3 py-1">
+        <img 
+          src="/images/logo.png" 
+          alt="JIYA Sales & Services Logo" 
+          class="h-14 sm:h-16 w-auto object-contain" 
+        />
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900 font-heading leading-none">JIYA</span>
+          <span class="text-[11px] font-bold text-amber-600 tracking-wide uppercase">Sales &amp; Services</span>
         </div>
       </a>
 

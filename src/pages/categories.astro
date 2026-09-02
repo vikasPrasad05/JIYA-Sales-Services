@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProductCategories from '../components/ProductCategories.astro';
 import TrustBadges from '../components/TrustBadges.astro';
+import SparePartsBreakdown from '../components/SparePartsBreakdown.astro';
 import { PRODUCT_CATEGORIES, COMPANY_INFO } from '../data/jiyaData';
 ---
 
@@ -98,6 +99,9 @@ import { PRODUCT_CATEGORIES, COMPANY_INFO } from '../data/jiyaData';
       </div>
     </div>
   </section>
+
+  <!-- Technical Spare Parts Diagrams -->
+  <SparePartsBreakdown />
 
   <!-- CTA Banner -->
   <section class="py-12 bg-slate-900 text-white">

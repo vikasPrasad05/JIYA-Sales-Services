@@ -5,66 +5,74 @@ import { PRODUCTS, PRODUCT_CATEGORIES, COMPANY_INFO } from '../data/jiyaData';
 <section id="products" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Section Header -->
-    <div class="space-y-6 border-b border-slate-200 pb-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <span class="badge-industrial">Official GIDC Vapi Catalog</span>
-          <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-1 font-heading">
-            All Material Handling Equipments &amp; Industrial Casters
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl leading-relaxed">
-            Complete inventory of 80+ products from our official catalog sheets (JSS-1 to JSS-16). High performance pallet trucks, stackers, platform carts, and industrial caster wheels.
-          </p>
-        </div>
-
-        <!-- Search Input Bar -->
-        <div class="w-full md:w-80 shrink-0">
-          <div class="relative">
-            <input
-              type="text"
-              id="product-search-input"
-              placeholder="Search by Model (JSS-1, JSS-7) or Name..."
-              class="w-full pl-9 pr-4 py-2.5 bg-white border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none shadow-sm"
-            />
-            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category Filter Tabs -->
-      <div class="flex flex-wrap gap-2 pt-2">
-        <button
-          class="cat-filter-btn px-3.5 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer bg-yellow-400 text-slate-950 shadow-md border border-yellow-500 font-black"
-          data-cat-id="all"
-        >
-          All Catalog Items ({PRODUCTS.length})
-        </button>
-        {PRODUCT_CATEGORIES.map(cat => {
-          const count = PRODUCTS.filter(p => p.category === cat.id).length;
-          return (
-            <button
-              class="cat-filter-btn px-3.5 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer bg-white text-slate-700 hover:bg-yellow-50 hover:border-yellow-400 border border-slate-300"
-              data-cat-id={cat.id}
-            >
-              {cat.title} ({count})
-            </button>
-          );
-        })}
-      </div>
+    <!-- Section Header Title -->
+    <div class="pb-4">
+      <span class="badge-industrial">Official GIDC Vapi Catalog</span>
+      <h2 class="text-3xl font-black text-slate-900 tracking-tight mt-1 font-heading">
+        All Material Handling Equipments &amp; Industrial Casters
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl leading-relaxed">
+        Complete inventory of {PRODUCTS.length}+ products from our official catalog sheets. High performance pallet trucks, stackers, platform carts, and industrial caster wheels.
+      </p>
     </div>
 
-    <!-- Results Counter -->
-    <div class="mt-6 flex items-center justify-between text-xs text-slate-500 font-medium">
-      <span id="product-count-display">Showing {PRODUCTS.length} of {PRODUCTS.length} catalog products</span>
-      <button 
-        id="clear-search-btn"
-        class="hidden text-amber-600 hover:underline font-bold cursor-pointer"
-      >
-        Clear Search
-      </button>
+    <!-- Sticky Search & Category Filter Bar -->
+    <div class="sticky top-20 z-30 bg-slate-50/95 backdrop-blur-md py-3.5 border-y border-slate-200/90 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 shadow-sm transition-shadow">
+      <div class="max-w-7xl mx-auto space-y-3">
+        
+        <!-- Search Bar & Results Counter -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <!-- Search Input Bar -->
+          <div class="w-full sm:w-80 md:w-96 shrink-0">
+            <div class="relative">
+              <input
+                type="text"
+                id="product-search-input"
+                placeholder="Search by Model (JSS-1, JSS-7) or Name..."
+                class="w-full pl-9 pr-8 py-2.5 bg-white border border-slate-300 rounded-lg text-xs focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none shadow-xs font-medium"
+              />
+              <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Counter & Clear Search -->
+          <div class="flex items-center justify-between sm:justify-end gap-3 text-xs text-slate-600 font-medium">
+            <span id="product-count-display" class="font-semibold text-slate-700 bg-white px-3 py-1.5 rounded border border-slate-200 shadow-2xs">
+              Showing {PRODUCTS.length} of {PRODUCTS.length} catalog products
+            </span>
+            <button 
+              id="clear-search-btn"
+              class="hidden text-amber-700 hover:text-amber-800 bg-amber-100/80 hover:bg-amber-200/80 px-2.5 py-1.5 rounded text-xs font-bold transition-colors cursor-pointer"
+            >
+              ✕ Clear Search
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin md:flex-wrap">
+          <button
+            class="cat-filter-btn whitespace-nowrap shrink-0 px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer bg-yellow-400 text-slate-950 shadow-sm border border-yellow-500 font-black"
+            data-cat-id="all"
+          >
+            All Catalog Items ({PRODUCTS.length})
+          </button>
+          {PRODUCT_CATEGORIES.map(cat => {
+            const count = PRODUCTS.filter(p => p.category === cat.id).length;
+            return (
+              <button
+                class="cat-filter-btn whitespace-nowrap shrink-0 px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer bg-white text-slate-700 hover:bg-yellow-50 hover:border-yellow-400 border border-slate-300"
+                data-cat-id={cat.id}
+              >
+                {cat.title} ({count})
+              </button>
+            );
+          })}
+        </div>
+
+      </div>
     </div>
 
     <!-- Products Grid -->
@@ -307,9 +315,9 @@ import { PRODUCTS, PRODUCT_CATEGORIES, COMPANY_INFO } from '../data/jiyaData';
     filterBtns.forEach((btn) => {
       const catId = btn.getAttribute('data-cat-id');
       if (catId === activeCategory) {
-        btn.className = 'cat-filter-btn px-3.5 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer bg-yellow-400 text-slate-950 shadow-md border border-yellow-500 font-black';
+        btn.className = 'cat-filter-btn whitespace-nowrap shrink-0 px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer bg-yellow-400 text-slate-950 shadow-sm border border-yellow-500 font-black';
       } else {
-        btn.className = 'cat-filter-btn px-3.5 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer bg-white text-slate-700 hover:bg-yellow-50 hover:border-yellow-400 border border-slate-300';
+        btn.className = 'cat-filter-btn whitespace-nowrap shrink-0 px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer bg-white text-slate-700 hover:bg-yellow-50 hover:border-yellow-400 border border-slate-300';
       }
     });
   }
@@ -319,6 +327,15 @@ import { PRODUCTS, PRODUCT_CATEGORIES, COMPANY_INFO } from '../data/jiyaData';
       activeCategory = btn.getAttribute('data-cat-id') || 'all';
       updateCategoryStyles();
       filterProducts();
+
+      // Scroll to top of product catalog grid if user is scrolled down
+      const gridElem = document.getElementById('products-grid');
+      if (gridElem) {
+        const gridTop = gridElem.getBoundingClientRect().top + window.scrollY - 180;
+        if (window.scrollY > gridTop + 50) {
+          window.scrollTo({ top: gridTop, behavior: 'smooth' });
+        }
+      }
     });
   });
 
