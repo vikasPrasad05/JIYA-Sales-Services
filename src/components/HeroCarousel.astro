@@ -1,0 +1,262 @@
+---
+// Hero Carousel matching exact JKCaster Sailor carousel design, using generated 16:9 warehouse slides
+const slides = [
+  {
+    image: "/images/products/hero_slide_forklift_equipment.jpg",
+    title: "Material Handling",
+    subtitle: "Optimize your workflow with our material handling equipment. Comprehensive range of forklifts, reach trucks & stackers designed for maximum efficiency.",
+    ctaText: "Shop Now",
+    ctaLink: "/products",
+    align: "left"
+  },
+  {
+    image: "/images/products/hero_slide_towing_slings.jpg",
+    title: "Lifting & Towing",
+    subtitle: "Heavy duty electric tow tugs, platform trailers, polyester webbing slings & ratchet cargo lashing belts built for safety.",
+    ctaText: "Explore Range",
+    ctaLink: "/products",
+    align: "left"
+  },
+  {
+    image: "/images/products/hero_slide_industrial_wheels.jpg",
+    title: "Wheels & Spares",
+    subtitle: "Solid rubber tires, heavy-duty PU drive wheels, hydraulic pumps, drive chains & precision replacement parts.",
+    ctaText: "Get a Quote",
+    ctaLink: "/contact",
+    align: "left"
+  }
+];
+---
+
+<section id="hero" class="hero section dark-background hero-half-page">
+  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+    <div class="carousel-indicators">
+      {slides.map((_, index) => (
+        <button 
+          type="button" 
+          data-bs-target="#hero-carousel" 
+          data-bs-slide-to={index} 
+          class={index === 0 ? "active" : ""} 
+          aria-current={index === 0 ? "true" : "false"} 
+          aria-label={`Slide ${index + 1}`}
+        ></button>
+      ))}
+    </div>
+
+    <div class="carousel-inner">
+      {slides.map((slide, index) => (
+        <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+          <img 
+            src={slide.image} 
+            alt={slide.title} 
+            class="d-block w-100" 
+            style="object-fit: cover; height: 100%; width: 100%;"
+          />
+          <div class={`carousel-container ${slide.align === "left" ? "align-items-start justify-content-center text-start" : "align-items-center justify-content-center text-center"}`}>
+            {slide.align === "left" ? (
+              <div class="hero-left-banner-content">
+                <p class="hero-tagline-eyebrow">Welcome to JIYA Sales &amp; Services</p>
+                <h2 class="hero-heading-left">{slide.title}</h2>
+                <p class="hero-subtext-left">{slide.subtitle}</p>
+                <a href={slide.ctaLink} class="btn-get-started">{slide.ctaText}</a>
+              </div>
+            ) : (
+              <>
+                <p class="hero-tagline-eyebrow">Welcome to JIYA Sales &amp; Services</p>
+                <h2>{slide.title}</h2>
+                <p>{slide.subtitle}</p>
+                <a href={slide.ctaLink} class="btn-get-started">{slide.ctaText}</a>
+              </>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero-half-page .carousel {
+    min-height: 72vh !important;
+    height: 72vh !important;
+    max-height: 680px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .hero-half-page .carousel-control-prev,
+  .hero-half-page .carousel-control-next {
+    display: none !important;
+  }
+
+  .hero-half-page .carousel-inner {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+
+  .hero-half-page .carousel-item {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    display: none;
+  }
+
+  .hero-half-page .carousel-item.active {
+    display: block !important;
+  }
+
+  .hero-half-page .carousel-item:before {
+    display: none !important;
+  }
+
+  .hero-half-page .carousel-item img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    z-index: 1 !important;
+    opacity: 0.55 !important;
+    filter: brightness(0.65) contrast(1.05) !important;
+    transition: opacity 0.3s ease, filter 0.3s ease !important;
+  }
+
+  @media (max-width: 768px) {
+    .hero-half-page .carousel {
+      min-height: 60vh !important;
+      height: 60vh !important;
+    }
+  }
+
+  .hero-half-page .carousel-container {
+    inset: 30px 48px !important;
+    padding: 15px !important;
+    z-index: 3 !important;
+  }
+
+  .hero-half-page .hero-left-banner-content {
+    max-width: 800px !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .hero-half-page .hero-tagline-eyebrow {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color, #ff6a00) !important;
+    margin-bottom: 8px !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .hero-half-page .hero-heading-left {
+    font-size: 38px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px !important;
+    text-align: left !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-half-page .hero-subtext-left {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    text-align: left !important;
+    margin-bottom: 24px !important;
+    color: #ffffff !important;
+    max-width: 580px !important;
+    text-shadow: none !important;
+  }
+
+  .hero-half-page h2 {
+    font-size: 38px !important;
+    font-weight: 500 !important;
+    margin-bottom: 12px !important;
+    line-height: 1.25 !important;
+    text-shadow: none !important;
+    white-space: nowrap !important;
+  }
+
+  @media (max-width: 768px) {
+    .hero-half-page .carousel-container {
+      inset: 20px 20px !important;
+      padding: 10px !important;
+    }
+
+    .hero-half-page .hero-left-banner-content {
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+
+    .hero-half-page .hero-tagline-eyebrow {
+      font-size: 12px !important;
+      letter-spacing: 1px !important;
+      margin-bottom: 6px !important;
+      white-space: nowrap !important;
+    }
+
+    .hero-half-page .hero-heading-left {
+      font-size: 24px !important;
+      font-weight: 500 !important;
+      margin-bottom: 10px !important;
+      white-space: normal !important;
+      text-shadow: none !important;
+    }
+
+    .hero-half-page .hero-subtext-left {
+      font-size: 14px !important;
+      line-height: 1.5 !important;
+      margin-bottom: 16px !important;
+      text-shadow: none !important;
+    }
+
+    .hero-half-page h2 {
+      font-size: 24px !important;
+      font-weight: 500 !important;
+      margin-bottom: 8px !important;
+      white-space: normal !important;
+      text-shadow: none !important;
+    }
+  }
+
+  .hero-half-page p {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+    max-width: 750px !important;
+    text-align: center !important;
+  }
+
+  @media (max-width: 768px) {
+    .hero-half-page p {
+      font-size: 14px !important;
+      margin-bottom: 14px !important;
+    }
+  }
+
+  .hero-half-page .btn-get-started {
+    padding: 10px 28px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    display: inline-block;
+  }
+</style>

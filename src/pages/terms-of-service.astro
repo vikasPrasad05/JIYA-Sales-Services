@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { COMPANY_INFO } from '../data/jiyaData';
+---
+
+<Layout 
+  title={`Terms of Service | ${COMPANY_INFO.name}`}
+  description={`Terms of Service and commercial sales conditions for ${COMPANY_INFO.name}.`}
+>
+  <!-- Page Title -->
+  <div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Terms of Service</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="current">Terms of Service</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <section class="section py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 bg-white p-4 p-md-5 rounded shadow-sm border" style="border-top: 4px solid var(--accent-color);">
+          
+          <h3 style="font-weight: 700; color: #222; margin-bottom: 20px;">1. Commercial Quotations &amp; Orders</h3>
+          <p style="color: #666; line-height: 1.8;">
+            All quotations provided by {COMPANY_INFO.name} for material handling equipment, hand pallet trucks, caster wheels, and hydraulic spares are valid for the period specified in the formal proforma invoice. Prices are subject to applicable GST taxes (GSTIN: {COMPANY_INFO.gstin}) and freight terms as agreed.
+          </p>
+
+          <h3 style="font-weight: 700; color: #222; margin-top: 30px; margin-bottom: 20px;">2. Delivery &amp; Dispatch</h3>
+          <p style="color: #666; line-height: 1.8;">
+            Equipment and spare parts are dispatched from our GIDC Vapi facility. While we strive for same-day dispatch on stock items across Vapi, Sarigam, Umbergaon, Daman, and Silvassa, transit times for interstate consignments depend on third-party logistics carriers.
+          </p>
+
+          <h3 style="font-weight: 700; color: #222; margin-top: 30px; margin-bottom: 20px;">3. Warranty &amp; Technical Support</h3>
+          <p style="color: #666; line-height: 1.8;">
+            Our standard hydraulic pallet trucks and equipment carry manufacturer warranty against manufacturing defects on hydraulic pumps and steel structures. Wear-and-tear components such as polyurethane wheel coatings subjected to overload or chemical damage are covered under our repair/replacement service policy.
+          </p>
+
+          <h3 style="font-weight: 700; color: #222; margin-top: 30px; margin-bottom: 20px;">4. Contact &amp; Grievances</h3>
+          <p style="color: #666; line-height: 1.8;">
+            For billing inquiries, technical troubleshooting, or order status, please contact our administrative desk at <a href={`mailto:${COMPANY_INFO.email}`} style="color: var(--accent-color); font-weight: 600;">{COMPANY_INFO.email}</a> or call <a href={`tel:${COMPANY_INFO.phone}`} style="color: var(--accent-color); font-weight: 600;">{COMPANY_INFO.phone}</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

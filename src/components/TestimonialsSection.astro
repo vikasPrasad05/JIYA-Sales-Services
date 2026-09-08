@@ -1,0 +1,59 @@
+---
+const testimonials = [
+  {
+    name: "Rajesh Patel",
+    role: "Plant Operations Head • Vapi GIDC",
+    text: "JIYA Sales & Services provided custom 685mm wide pallet trucks and replacement hydraulic pump kits for our chemical facility. Outstanding durability and fast same-day delivery.",
+    rating: 5
+  },
+  {
+    name: "Mukesh Sharma",
+    role: "Maintenance Engineer • Sarigam Industrial Area",
+    text: "We rely entirely on JIYA for heavy-duty red PU casters and hydraulic stacker spares. Their quality is solid OEM grade and pricing is truly direct and honest.",
+    rating: 5
+  },
+  {
+    name: "Anil Desai",
+    role: "Warehouse Manager • Silvassa Hub",
+    text: "Whenever our hand pallet trucks need hydraulic seal replacements or new steering rollers, JIYA delivers within hours. Excellent after-sales support and genuine parts.",
+    rating: 5
+  }
+];
+---
+
+<section id="testimonials" class="testimonials section light-background">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <p>What They Say About Us</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      {testimonials.map((item) => (
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-item p-4 bg-white rounded shadow-sm h-100" style="border-top: 4px solid var(--accent-color);">
+            <div class="stars mb-2" style="color: #ffc107;">
+              {[...Array(item.rating)].map(() => (
+                <i class="bi bi-star-fill me-1"></i>
+              ))}
+            </div>
+            <p style="font-size: 14px; line-height: 1.7; color: #555; font-style: italic; margin-bottom: 20px;">
+              <i class="bi bi-quote quote-icon-left" style="color: var(--accent-color); font-size: 20px;"></i>
+              {item.text}
+              <i class="bi bi-quote quote-icon-right" style="color: var(--accent-color); font-size: 20px;"></i>
+            </p>
+            <div class="d-flex align-items-center mt-auto pt-2 border-top">
+              <div class="d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 44px; height: 44px; background: #fff0e6; color: var(--accent-color); font-weight: 800; font-size: 16px;">
+                {item.name.charAt(0)}
+              </div>
+              <div>
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 2px; color: #222;">{item.name}</h3>
+                <h4 style="font-size: 12px; color: #777; margin-bottom: 0; font-weight: 500;">{item.role}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

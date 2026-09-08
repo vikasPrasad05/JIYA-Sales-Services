@@ -1,69 +1,189 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AboutSection from '../components/AboutSection.astro';
-import OfficialCatalogBoard from '../components/OfficialCatalogBoard.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import IndustriesServed from '../components/IndustriesServed.astro';
-import ClientProcess from '../components/ClientProcess.astro';
-import TrustBadges from '../components/TrustBadges.astro';
 import { COMPANY_INFO } from '../data/jiyaData';
 ---
 
 <Layout 
-  title="About Us | JIYA Sales & Services Vapi"
-  description="Learn about JIYA Sales & Services - leading B2B supplier and manufacturer of Hand Pallet Trucks, Caster Wheels, and Hydraulic Stacker Spares based in GIDC Vapi."
+  title={`About Us | ${COMPANY_INFO.name}`}
+  description={`Learn more about ${COMPANY_INFO.name}, leading manufacturer and distributor of Material Handling Equipments and Industrial Spares based in GIDC Vapi.`}
 >
-  <!-- Page Header Banner -->
-  <div class="bg-slate-900 text-white py-12 lg:py-16 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight font-heading">
-        About <span class="text-amber-400">JIYA Sales & Services</span>
-      </h1>
-      <p class="mt-3 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
-        Trusted industrial material handling partner for over 15+ years. Specializing in heavy-duty equipment, polyurethane caster wheels, and OEM stacker spares in GIDC Vapi.
-      </p>
+  <!-- Page Title -->
+  <div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">About Us</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="current">About Us</li>
+        </ol>
+      </nav>
     </div>
-  </div>
+  </div><!-- End Page Title -->
 
-  <!-- Trust Badges -->
-  <TrustBadges />
-
-  <!-- Detailed About Section -->
-  <AboutSection />
-
-  <!-- Official Printed Catalog Template Board -->
-  <OfficialCatalogBoard />
-
-  <!-- Why Choose Us Section -->
-  <WhyChooseUs />
-
-  <!-- Industries Served -->
-  <IndustriesServed />
-
-  <!-- Client Process -->
-  <ClientProcess />
-
-  <!-- Call to Action Banner -->
-  <section class="py-12 bg-gradient-to-r from-slate-900 via-brand-dark to-slate-900 text-white border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <h2 class="text-2xl font-black font-heading text-white">Need Custom Equipment Specifications?</h2>
-        <p class="text-xs sm:text-sm text-slate-300 mt-1">Contact our engineering team in GIDC Vapi for custom load ratings, wheel materials, and dimensions.</p>
-      </div>
-      <div class="flex items-center gap-4 shrink-0">
-        <a 
-          href={`tel:${COMPANY_INFO.phone}`} 
-          class="px-5 py-3 border border-slate-600 hover:border-slate-400 text-white text-xs font-bold rounded flex items-center gap-2 transition-colors"
-        >
-          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h32.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-          </svg>
-          <span>Call Us Now</span>
-        </a>
-        <a href="/contact" class="b2b-btn-amber text-xs py-3 px-6">
-          Contact Us
-        </a>
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-5 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-3 border rounded shadow-sm bg-white" style="border: 2px solid var(--accent-color) !important;">
+            <img 
+              src="/images/products/hpt_yellow_550_clean.png" 
+              class="img-fluid rounded" 
+              alt={COMPANY_INFO.name}
+              style="width: 100%; height: 380px; object-fit: contain; background-color: #fdfdfd;"
+            />
+          </div>
+        </div>
+        <div class="col-lg-7 content ps-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <h3 style="font-weight: 700; color: #222; font-size: 28px;">Welcome to {COMPANY_INFO.name}</h3>
+          <p class="fst-italic mt-3" style="font-size: 18px; color: #555;">
+            Led by <strong>{COMPANY_INFO.proprietor}</strong>, {COMPANY_INFO.name} has emerged as a premier manufacturer, distributor, and repair center in GIDC Vapi for industrial mobility and material handling.
+          </p>
+          <p style="color: #666; line-height: 1.8;">
+            We specialize in an extensive spectrum of high-performance products, including Heavy Duty Polyurethane &amp; Cast Iron Caster Wheels, Hydraulic Hand Pallet Trucks (550mm/685mm), Electric &amp; Manual Stackers, Drum Handling Equipments, and 100+ OEM replacement spares for pallet truck hydraulic pumps.
+          </p>
+          <p style="color: #666; line-height: 1.8;">
+            Operating from our well-equipped workshop in Nirmal Shopping Center, GIDC Phase 2, Vapi, we supply genuine products directly to manufacturing plants, chemical hubs, textile mills, pharma laboratories, and logistics warehouses across Gujarat, Maharashtra, and pan-India.
+          </p>
+          
+          <div class="mt-4 p-3 rounded" style="background: #fff8f2; border-left: 4px solid var(--accent-color);">
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-patch-check-fill" style="font-size: 28px; color: var(--accent-color);"></i>
+              <div>
+                <strong style="color: #222; font-size: 15px;">Registered &amp; GST Compliant:</strong>
+                <div style="font-size: 13px; color: #666;">GSTIN: <span style="color: var(--accent-color); font-weight: 700;">{COMPANY_INFO.gstin}</span> • Complete B2B Billing &amp; Tax Compliance</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </section><!-- /About Section -->
+
+  <!-- Mission & Vision Section -->
+  <section id="mission-vision" class="services section light-background">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item d-flex position-relative h-100" style="background: #fff; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--accent-color);">
+            <i class="bi bi-bullseye icon flex-shrink-0" style="color: var(--accent-color); font-size: 40px; margin-right: 20px;"></i>
+            <div>
+              <h4 class="title" style="font-weight: 700; margin-bottom: 12px; font-size: 20px;">Our Mission</h4>
+              <p class="description" style="color: #666; line-height: 1.7; font-size: 15px; margin-bottom: 0;">
+                To deliver innovative, highly durable, and ergonomically designed material handling equipment that minimizes workplace strain, enhances operator safety, and reduces machinery downtime through uncompromising engineering quality.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item d-flex position-relative h-100" style="background: #fff; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid var(--accent-color);">
+            <i class="bi bi-eye icon flex-shrink-0" style="color: var(--accent-color); font-size: 40px; margin-right: 20px;"></i>
+            <div>
+              <h4 class="title" style="font-weight: 700; margin-bottom: 12px; font-size: 20px;">Our Vision</h4>
+              <p class="description" style="color: #666; line-height: 1.7; font-size: 15px; margin-bottom: 0;">
+                To be recognized as Western India's most dependable one-stop destination for industrial material handling machinery, heavy-duty wheels, and precision hydraulic spares, backed by technical mastery and transparent pricing.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /Mission Vision -->
+
+  <!-- Our Journey Section -->
+  <section id="journey" class="about section">
+    <div class="container" data-aos="fade-up">
+      <div class="container section-title text-center mb-5" data-aos="fade-up">
+        <h2>Our Journey</h2>
+        <p>The Path to Excellence</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="journey-content" style="border-left: 3px solid var(--accent-color); padding-left: 35px; position: relative;">
+            
+            <div class="journey-step mb-5" style="position: relative;">
+              <div style="position: absolute; left: -47px; top: 0; background: var(--accent-color); width: 22px; height: 22px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 2px var(--accent-color);"></div>
+              <h4 style="color: var(--heading-color); font-weight: bold; margin-bottom: 10px; font-size: 20px;">Establishment: Grounded in GIDC Vapi</h4>
+              <p style="color: #666; line-height: 1.8;">
+                Founded with a dedicated focus on meeting the heavy material handling and wheel replacement demands of Vapi's fast-growing chemical, textile, and manufacturing corridor.
+              </p>
+            </div>
+
+            <div class="journey-step mb-5" style="position: relative;">
+              <div style="position: absolute; left: -47px; top: 0; background: var(--accent-color); width: 22px; height: 22px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 2px var(--accent-color);"></div>
+              <h4 style="color: var(--heading-color); font-weight: bold; margin-bottom: 10px; font-size: 20px;">Expanding Horizons: 140+ Products Spectrum</h4>
+              <p style="color: #666; line-height: 1.8;">
+                Broadened our inventory to encompass precision hydraulic pallet truck assemblies, electric stacker controls, stainless steel cleanroom trucks, and custom polyurethane casters.
+              </p>
+            </div>
+
+            <div class="journey-step" style="position: relative;">
+              <div style="position: absolute; left: -47px; top: 0; background: var(--accent-color); width: 22px; height: 22px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 2px var(--accent-color);"></div>
+              <h4 style="color: var(--heading-color); font-weight: bold; margin-bottom: 10px; font-size: 20px;">Today: Trusted Industrial Partner</h4>
+              <p style="color: #666; line-height: 1.8;">
+                Proudly servicing hundreds of corporate factories and small workshops across Gujarat and Maharashtra with immediate part replacements, maintenance expertise, and custom engineering.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /Journey Section -->
+
+  <!-- Strategic Advantages Section -->
+  <section id="advantages" class="services section light-background">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center mb-5">
+        <h2>Our Strategic Advantages</h2>
+        <p>Why Choose {COMPANY_INFO.name}?</p>
+      </div>
+      <div class="row gy-4">
+        
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item position-relative text-center p-4 bg-white rounded shadow-sm h-100" style="border-top: 4px solid var(--accent-color);">
+            <i class="bi bi-shield-check icon" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px; display: block;"></i>
+            <h4 style="font-weight: 700; font-size: 18px; margin-bottom: 10px;">Premium Quality</h4>
+            <p style="font-size: 14px; color: #666; line-height: 1.6;">
+              Uncompromising standards in manufacturing ensure that every pallet truck and wheel delivers long-lasting durability.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative text-center p-4 bg-white rounded shadow-sm h-100" style="border-top: 4px solid var(--accent-color);">
+            <i class="bi bi-box-seam icon" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px; display: block;"></i>
+            <h4 style="font-weight: 700; font-size: 18px; margin-bottom: 10px;">Extensive Range</h4>
+            <p style="font-size: 14px; color: #666; line-height: 1.6;">
+              From light furniture casters to 5-ton hydraulic pallet trucks and full electric stackers, we stock every configuration.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item position-relative text-center p-4 bg-white rounded shadow-sm h-100" style="border-top: 4px solid var(--accent-color);">
+            <i class="bi bi-gear-wide-connected icon" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px; display: block;"></i>
+            <h4 style="font-weight: 700; font-size: 18px; margin-bottom: 10px;">Engineering Excellence</h4>
+            <p style="font-size: 14px; color: #666; line-height: 1.6;">
+              Experienced technical team ready to service, rebuild hydraulic jacks, and machine custom wheel fittings.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative text-center p-4 bg-white rounded shadow-sm h-100" style="border-top: 4px solid var(--accent-color);">
+            <i class="bi bi-people icon" style="font-size: 40px; color: var(--accent-color); margin-bottom: 15px; display: block;"></i>
+            <h4 style="font-weight: 700; font-size: 18px; margin-bottom: 10px;">Client-Centric</h4>
+            <p style="font-size: 14px; color: #666; line-height: 1.6;">
+              Quick turnaround times, direct transparent pricing, and dependable on-site consultation in Vapi GIDC.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /Advantages -->
 </Layout>

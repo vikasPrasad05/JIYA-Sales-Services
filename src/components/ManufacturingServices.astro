@@ -1,0 +1,72 @@
+---
+const manufacturingItems = [
+  {
+    title: "LIFTING AND LATCHING BELT",
+    image: "/images/products/lifting_ceiling_belt.png",
+    link: "/services"
+  },
+  {
+    title: "PLATEFORM TROLLEY",
+    image: "/images/products/ms_platform_trolley_blue.png",
+    link: "/services"
+  },
+  {
+    title: "DRUM LIFTING TROLLEY",
+    image: "/images/products/drum_lifter_tilter.png",
+    link: "/services"
+  },
+  {
+    title: "ALL TYPE STACKER",
+    image: "/images/products/hydraulic_stacker_yellow.png",
+    link: "/services"
+  },
+  {
+    title: "HAND PALLET TRUCK",
+    image: "/images/products/hpt_yellow_550_clean.png",
+    link: "/services"
+  },
+  {
+    title: "CASTERS WHEEL",
+    image: "/images/products/pu_caster_wheel_red.png",
+    link: "/services"
+  }
+];
+---
+
+<section id="manufacturing" class="services section light-background">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Manufacturing</h2>
+    <p>Manufacturing Of</p>
+  </div>
+  <div class="container">
+    <div class="row gy-4">
+      {manufacturingItems.map((item) => (
+        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+          <div class="service-item position-relative text-center p-4" style="border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: #ffffff; transition: transform 0.3s ease, box-shadow 0.3s ease; border-bottom: 6px solid var(--accent-color); height: 100%;">
+            
+            <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; padding: 10px; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.06);">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                style="width: 100%; height: 100%; object-fit: contain;"
+                onerror="this.onerror=null; this.src='/images/logo.png'"
+              />
+            </div>
+            
+            <h3 style="font-weight: 700; font-size: 19px; color: #333; margin-bottom: 0; text-transform: uppercase; letter-spacing: 1px; line-height: 1.4;">
+              {item.title}
+            </h3>
+            <a href={item.link} class="stretched-link"></a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15) !important;
+  }
+</style>

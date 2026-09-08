@@ -1,8 +1,9 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import FloatingActions from '../components/FloatingActions.astro';
 import SEOHead from '../components/SEOHead.astro';
+import { COMPANY_INFO } from '../data/jiyaData';
+import '../styles/jk-theme.css';
 import '../styles/global.css';
 
 export interface Props {
@@ -14,25 +15,131 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <SEOHead title={title} description={description} />
   </head>
-  <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 flex flex-col min-h-screen">
+  <body class="index-page">
     
     <Navbar />
 
-    <main class="flex-grow">
+    <main class="main">
       <slot />
     </main>
 
     <Footer />
 
-    <FloatingActions />
+    <!-- 1. Top Button: Scroll-To-Top Arrow (Appears when scrolled) -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top" title="Scroll to top">
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- 2. Middle Button: Call Now Button -->
+    <a 
+      href={`tel:${COMPANY_INFO.phone}`}
+      id="call-float" 
+      class="call-float"
+      aria-label={`Call ${COMPANY_INFO.name}`}
+      title={`Call Us: ${COMPANY_INFO.phone}`}
+    >
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+
+    <!-- 3. Bottom Button: Original WhatsApp Floating Button -->
+    <a 
+      href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent(COMPANY_INFO.whatsappMsg)}`}
+      id="whatsapp-float" 
+      class="whatsapp-float"
+      target="_blank" 
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      title="Chat on WhatsApp with JIYA Sales & Services"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Global Interactions matching Sailor/JKCaster -->
+    <script is:inline>
+      (function() {
+        "use strict";
+
+        // Toggle .scrolled on body
+        function toggleScrolled() {
+          const selectBody = document.querySelector('body');
+          const selectHeader = document.querySelector('#header');
+          if (!selectHeader) return;
+          if (window.scrollY > 100) {
+            selectBody.classList.add('scrolled');
+          } else {
+            selectBody.classList.remove('scrolled');
+          }
+        }
+        document.addEventListener('scroll', toggleScrolled);
+        window.addEventListener('load', toggleScrolled);
+
+        // Mobile Nav Toggle
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+        function toggleMobileNav() {
+          document.querySelector('body').classList.toggle('mobile-nav-active');
+          if (mobileNavToggleBtn) {
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+          }
+        }
+        if (mobileNavToggleBtn) {
+          mobileNavToggleBtn.addEventListener('click', toggleMobileNav);
+        }
+
+        // Close mobile nav on link click
+        document.querySelectorAll('#navmenu a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (document.querySelector('body').classList.contains('mobile-nav-active')) {
+              toggleMobileNav();
+            }
+          });
+        });
+
+        // Scroll top button
+        const scrollTopBtn = document.querySelector('#scroll-top');
+        function toggleScrollTop() {
+          if (scrollTopBtn) {
+            if (window.scrollY > 100) {
+              scrollTopBtn.classList.add('active');
+            } else {
+              scrollTopBtn.classList.remove('active');
+            }
+          }
+        }
+        if (scrollTopBtn) {
+          scrollTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+        window.addEventListener('scroll', toggleScrollTop);
+        window.addEventListener('load', toggleScrollTop);
+      })();
+    </script>
   </body>
 </html>

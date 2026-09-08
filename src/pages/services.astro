@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { COMPANY_INFO } from '../data/jiyaData';
+
+const services = [
+  {
+    title: "LIFTING AND LATCHING BELT",
+    icon: "bi-link-45deg",
+    desc: "Heavy-duty polyester lifting belts, cargo lashing belts, and crane webbing slings engineered for secure overhead lifting and load transport.",
+    image: "/images/products/lifting_ceiling_belt.png"
+  },
+  {
+    title: "PLATEFORM TROLLEY",
+    icon: "bi-cart-fill",
+    desc: "Mild Steel (MS) powder-coated and Stainless Steel (SS 304) platform trolleys fitted with premium smooth-rolling casters for factory floor transport.",
+    image: "/images/products/ms_platform_trolley_blue.png"
+  },
+  {
+    title: "DRUM LIFTING TROLLEY",
+    icon: "bi-basket-fill",
+    desc: "Hydraulic drum tilters, stackers, and rim-grip lifters designed for standard 210-liter oil and chemical drums with safety clamp systems.",
+    image: "/images/products/drum_lifter_tilter.png"
+  },
+  {
+    title: "ALL TYPE STACKER",
+    icon: "bi-layers-fill",
+    desc: "Manual hand hydraulic stackers, semi-electric, and counterbalanced walkie stackers with lifting heights up to 3.5 meters and 2-ton capacity.",
+    image: "/images/products/hydraulic_stacker_yellow.png"
+  },
+  {
+    title: "HAND PALLET TRUCK",
+    icon: "bi-truck",
+    desc: "Precision hydraulic pallet trucks in 550mm standard and 685mm wide formats, stainless steel cleanroom models, and weighing scale pallet trucks.",
+    image: "/images/products/hpt_yellow_550_clean.png"
+  },
+  {
+    title: "CASTERS WHEEL",
+    icon: "bi-gear-fill",
+    desc: "Complete spectrum of 4mm & 3mm PU casters, forged steel extra heavy-duty casters, medical twin-wheel casters, and shock-absorbing spring casters.",
+    image: "/images/products/pu_caster_wheel_red.png"
+  },
+  {
+    title: "HYDRAULIC PUMP REPAIRS",
+    icon: "bi-wrench-adjustable-circle",
+    desc: "Comprehensive diagnostic testing, seal kit replacement, piston polishing, and oil valve rebuilding for all brands of pallet truck jacks.",
+    image: "/images/products/17.jpeg"
+  },
+  {
+    title: "CUSTOM EQUIPMENT FABRICATION",
+    icon: "bi-tools",
+    desc: "Custom fork lengths, low-profile chassis, scissor lift platforms, and tailored material handling carts manufactured to your factory specifications.",
+    image: "/images/products/ss_hydraulic_scissor.png"
+  }
+];
+---
+
+<Layout 
+  title={`Industrial Services & Solutions | ${COMPANY_INFO.name}`}
+  description="Manufacturing, sales, custom engineering and technical repair services for material handling equipment, stackers, platform trolleys, and caster wheels in Vapi GIDC."
+>
+  <!-- Page Title -->
+  <div class="page-title light-background">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Services</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="current">Services</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Services Section -->
+  <section id="services" class="services section">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
+        {services.map((item) => (
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="service-item d-flex position-relative h-100 p-4 bg-white rounded shadow-sm" style="border: 1px solid #eee; border-left: 4px solid var(--accent-color); transition: transform 0.3s, box-shadow 0.3s;">
+              <i class={`bi ${item.icon} icon flex-shrink-0`} style="font-size: 36px; color: var(--accent-color); margin-right: 20px;"></i>
+              <div>
+                <h4 class="title" style="font-weight: 700; font-size: 19px; margin-bottom: 8px;">
+                  <a href="/contact" class="stretched-link text-decoration-none" style="color: var(--heading-color);">
+                    {item.title}
+                  </a>
+                </h4>
+                <p class="description" style="color: #666; font-size: 14px; line-height: 1.6; margin-bottom: 12px;">
+                  {item.desc}
+                </p>
+                <div class="d-flex align-items-center gap-2">
+                  <a href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=Hello%20JIYA,%20I%20need%20details%20for%20service:%20${encodeURIComponent(item.title)}`} target="_blank" class="btn btn-sm" style="background: #e8f5e9; color: #2e7d32; font-size: 12px; font-weight: 600; z-index: 2; position: relative;">
+                    <i class="bi bi-whatsapp me-1"></i> Inquire Service
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box -->
+  <section class="section py-5 light-background">
+    <div class="container text-center">
+      <h3 style="font-weight: 800; color: #222; font-size: 26px;">Need Custom Material Handling or Caster Solutions?</h3>
+      <p style="color: #666; max-width: 600px; margin: 10px auto 25px;">
+        Our engineering team in GIDC Vapi provides on-site assessments, sample testing, and immediate dispatch.
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="/contact" class="btn" style="background: var(--accent-color); color: #fff; padding: 12px 30px; font-weight: 700; border-radius: 5px;">
+          Contact Our Engineers
+        </a>
+        <a href={`tel:${COMPANY_INFO.phone}`} class="btn btn-outline-dark" style="padding: 12px 25px; font-weight: 600; border-radius: 5px;">
+          <i class="bi bi-telephone me-1"></i> Call {COMPANY_INFO.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.09) !important;
+  }
+</style>
