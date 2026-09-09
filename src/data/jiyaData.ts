@@ -498,7 +498,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "cw-jss-1-4mm",
     model: "JSS-1",
-    name: "4MM PU Caster",
+    name: "4MM PU Caster Wheel",
     category: "caster-wheels",
     description: "4mm heavy gauge pressed steel bracket swivel caster fitted with red polyurethane wheel on cast iron core.",
     loadCapacity: "400 kg (4x2) | 600 kg (6x2) | 800 kg (8x2)",

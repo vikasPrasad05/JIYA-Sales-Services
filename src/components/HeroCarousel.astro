@@ -108,15 +108,22 @@ const slides = [
 
   .hero-half-page .carousel-item {
     position: absolute !important;
-    inset: 0 !important;
+    top: 0;
+    left: 0;
     width: 100% !important;
     height: 100% !important;
     min-height: 100% !important;
-    display: none;
+    opacity: 0 !important;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 1;
+    pointer-events: none;
+    display: block !important;
   }
 
   .hero-half-page .carousel-item.active {
-    display: block !important;
+    opacity: 1 !important;
+    z-index: 2;
+    pointer-events: auto;
   }
 
   .hero-half-page .carousel-item:before {
@@ -135,7 +142,38 @@ const slides = [
     z-index: 1 !important;
     opacity: 0.55 !important;
     filter: brightness(0.65) contrast(1.05) !important;
-    transition: opacity 0.3s ease, filter 0.3s ease !important;
+    transform: scale(1);
+    transition: transform 6s ease-out, opacity 1.2s ease !important;
+  }
+
+  .hero-half-page .carousel-item.active img {
+    transform: scale(1.06);
+  }
+
+  .hero-half-page .carousel-item.active .hero-tagline-eyebrow {
+    animation: heroFadeInUp 0.8s 0.15s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hero-half-page .carousel-item.active .hero-heading-left,
+  .hero-half-page .carousel-item.active h2 {
+    animation: heroFadeInUp 0.8s 0.3s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hero-half-page .carousel-item.active .hero-subtext-left,
+  .hero-half-page .carousel-item.active p {
+    animation: heroFadeInUp 0.8s 0.45s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hero-half-page .carousel-item.active .btn-get-started {
+    animation: heroFadeInUp 0.8s 0.6s both cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes heroFadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @media (max-width: 768px) {

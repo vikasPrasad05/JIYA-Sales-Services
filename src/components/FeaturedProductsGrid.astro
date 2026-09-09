@@ -1,8 +1,25 @@
 ---
 import { PRODUCTS } from '../data/jiyaData';
 
-// Take top 8 popular products for homepage showcase
-const featuredProducts = PRODUCTS.filter(p => p.isPopular).slice(0, 8);
+// Featured products showcasing top items across categories including Material Handling, Caster Wheels, and Trolleys
+const featuredIds = [
+  'mh-jss-1',       // Hand Pallet Truck-550
+  'cw-jss-1-4mm',   // 4MM PU Heavy Duty Caster Wheel
+  'mh-jss-7',       // Manual Hydraulic Stacker
+  'tc-jss-4',       // MS Platform Trolley
+  'cw-jss-5-brake', // PU Wheel Brake Type Caster
+  'mh-jss-11',      // Drum Lifter & Tilter Stacker
+  'tc-jss-6',       // Floor Crane
+  'mh-jss-4'        // SS Hand Pallet Truck (Grade 304)
+];
+
+const selectedProducts = featuredIds
+  .map(id => PRODUCTS.find(p => p.id === id))
+  .filter((p): p is typeof PRODUCTS[0] => Boolean(p));
+
+const featuredProducts = selectedProducts.length >= 8 
+  ? selectedProducts 
+  : [...selectedProducts, ...PRODUCTS.filter(p => p.isPopular && !selectedProducts.some(sp => sp.id === p.id))].slice(0, 8);
 ---
 
 <section id="featured-products" class="portfolio section">
