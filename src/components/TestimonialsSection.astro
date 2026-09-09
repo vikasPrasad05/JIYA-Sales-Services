@@ -31,7 +31,7 @@ const testimonials = [
     <div class="row gy-4">
       {testimonials.map((item) => (
         <div class="col-lg-4 col-md-6">
-          <div class="testimonial-item p-4 bg-white rounded shadow-sm h-100" style="border-top: 4px solid var(--accent-color);">
+          <div class="testimonial-item p-4 bg-white rounded border h-100" style="border-top: 4px solid var(--accent-color) !important;">
             <div class="stars mb-2" style="color: #ffc107;">
               {[...Array(item.rating)].map(() => (
                 <i class="bi bi-star-fill me-1"></i>

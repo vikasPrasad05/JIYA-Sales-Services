@@ -29,7 +29,7 @@ import { COMPANY_INFO } from '../data/jiyaData';
 
         <!-- Left 4 Info Items -->
         <div class="col-lg-4">
-          <div class="info-item d-flex p-3 mb-3 bg-white rounded shadow-sm border">
+          <div class="info-item d-flex p-3 mb-3 bg-white rounded border">
             <i class="bi bi-geo-alt flex-shrink-0" style="font-size: 28px; color: var(--accent-color); margin-right: 15px;"></i>
             <div>
               <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #222;">Address</h3>
@@ -39,7 +39,7 @@ import { COMPANY_INFO } from '../data/jiyaData';
             </div>
           </div>
 
-          <div class="info-item d-flex p-3 mb-3 bg-white rounded shadow-sm border">
+          <div class="info-item d-flex p-3 mb-3 bg-white rounded border">
             <i class="bi bi-telephone flex-shrink-0" style="font-size: 28px; color: var(--accent-color); margin-right: 15px;"></i>
             <div>
               <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #222;">Call Us</h3>
@@ -52,7 +52,7 @@ import { COMPANY_INFO } from '../data/jiyaData';
             </div>
           </div>
 
-          <div class="info-item d-flex p-3 mb-3 bg-white rounded shadow-sm border">
+          <div class="info-item d-flex p-3 mb-3 bg-white rounded border">
             <i class="bi bi-envelope flex-shrink-0" style="font-size: 28px; color: var(--accent-color); margin-right: 15px;"></i>
             <div>
               <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #222;">Email Us</h3>
@@ -65,7 +65,7 @@ import { COMPANY_INFO } from '../data/jiyaData';
             </div>
           </div>
 
-          <div class="info-item d-flex p-3 bg-white rounded shadow-sm border">
+          <div class="info-item d-flex p-3 bg-white rounded border">
             <i class="bi bi-whatsapp flex-shrink-0" style="font-size: 28px; color: #25d366; margin-right: 15px;"></i>
             <div>
               <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #222;">WhatsApp RFQ</h3>
@@ -81,7 +81,7 @@ import { COMPANY_INFO } from '../data/jiyaData';
 
         <!-- Right Contact Form -->
         <div class="col-lg-8">
-          <div class="p-4 p-md-5 bg-white rounded shadow-sm border" style="border-top: 4px solid var(--accent-color);">
+          <div class="p-4 p-md-5 bg-white rounded border" style="border-top: 4px solid var(--accent-color) !important;">
             <h3 style="font-size: 22px; font-weight: 700; color: #222; margin-bottom: 20px;">
               Request an Instant Quotation
             </h3>
@@ -100,63 +100,74 @@ import { COMPANY_INFO } from '../data/jiyaData';
               </div>
 
               <div class="col-md-6">
+                <label class="form-label text-muted small fw-bold">Company / Factory Name</label>
+                <input 
+                  type="text" 
+                  id="senderCompany" 
+                  class="form-control" 
+                  placeholder="Company Name (e.g. ABC Pharma Ltd)" 
+                  style="border-radius: 6px; padding: 10px 15px; border-color: #e2e8f0;" 
+                />
+              </div>
+
+              <div class="col-md-6">
                 <label class="form-label text-muted small fw-bold">Phone Number *</label>
                 <input 
                   type="tel" 
                   id="senderPhone" 
                   class="form-control" 
-                  placeholder="Mobile / Phone Number" 
+                  placeholder="10-digit Mobile Number" 
                   required 
                   style="border-radius: 6px; padding: 10px 15px; border-color: #e2e8f0;" 
                 />
               </div>
 
               <div class="col-md-6">
-                <label class="form-label text-muted small fw-bold">Email Address</label>
-                <input 
-                  type="email" 
-                  id="senderEmail" 
-                  class="form-control" 
-                  placeholder="Email Address" 
-                  style="border-radius: 6px; padding: 10px 15px; border-color: #e2e8f0;" 
-                />
-              </div>
-
-              <div class="col-md-6">
-                <label class="form-label text-muted small fw-bold">Subject / Product Required *</label>
-                <input 
-                  type="text" 
-                  id="senderSubject" 
-                  class="form-control" 
-                  placeholder="Product or Spare Name" 
+                <label class="form-label text-muted small fw-bold">Product of Interest *</label>
+                <select 
+                  id="senderCategory" 
+                  class="form-select" 
                   required 
-                  style="border-radius: 6px; padding: 10px 15px; border-color: #e2e8f0;" 
-                />
+                  style="border-radius: 6px; padding: 10px 15px; border-color: #e2e8f0;"
+                >
+                  <option value="" selected disabled>Select Equipment / Service</option>
+                  <option value="Hand Pallet Trucks">Hand Pallet Trucks (550mm / 685mm)</option>
+                  <option value="Caster Wheels">Heavy Duty PU / Nylon Caster Wheels</option>
+                  <option value="Hydraulic Stackers">Hydraulic / Electric Stackers</option>
+                  <option value="Drum Trolleys">Drum Lifters &amp; Tilters</option>
+                  <option value="Hydraulic Spares">Hydraulic Pump Spares &amp; Repairs</option>
+                  <option value="Custom Fabrication">Custom Fabrication &amp; Scissor Lifts</option>
+                  <option value="General Inquiry">General / Bulk B2B Inquiry</option>
+                </select>
               </div>
 
               <div class="col-12">
-                <label class="form-label text-muted small fw-bold">Detailed Requirements / Specifications *</label>
+                <label class="form-label text-muted small fw-bold">Requirement Details / Message *</label>
                 <textarea 
                   id="senderMessage" 
                   class="form-control" 
                   rows="4" 
-                  placeholder="Enter specifications, load capacity, quantity, or details..." 
+                  placeholder="Specify required quantity, load capacity (e.g. 2.5 Ton, 3 Ton), wheel diameter, or custom fork dimensions..." 
                   required 
-                  style="border-radius: 6px; padding: 12px 15px; border-color: #e2e8f0;"
+                  style="border-radius: 6px; padding: 10px 15px; border-color: #e2e8f0;"
                 ></textarea>
               </div>
 
-              <div class="col-12 mt-4 d-flex flex-wrap gap-3">
-                <button type="button" id="btnSendWhatsApp" class="btn text-white px-4 py-2" style="background: #25d366; font-weight: 700; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px;">
-                  <i class="bi bi-whatsapp"></i> Send via WhatsApp
+              <div class="col-12 d-flex flex-wrap gap-3 pt-2">
+                <button 
+                  type="submit" 
+                  class="btn text-white d-flex align-items-center gap-2" 
+                  style="background: #25d366; font-weight: 700; padding: 12px 25px; border-radius: 6px;"
+                >
+                  <i class="bi bi-whatsapp"></i> Send Inquiry via WhatsApp
                 </button>
-                <button type="submit" class="btn text-white px-4 py-2" style="background: var(--accent-color); font-weight: 700; border-radius: 6px; display: inline-flex; align-items: center; gap: 8px;">
-                  <i class="bi bi-send-fill"></i> Submit Inquiry
-                </button>
-              </div>
-
-              <div id="formSuccessAlert" class="alert alert-success mt-3 d-none">
-                Thank you! Your quotation request has been prepared and forwarded to our sales team.
+                <a 
+                  href={`tel:${COMPANY_INFO.phone}`} 
+                  class="btn btn-outline-dark d-flex align-items-center gap-2" 
+                  style="font-weight: 600; padding: 12px 25px; border-radius: 6px;"
+                >
+                  <i class="bi bi-telephone"></i> Call Directly: {COMPANY_INFO.phone}
+                </a>
               </div>
             </form>
           </div>
@@ -171,7 +182,7 @@ import { COMPANY_INFO } from '../data/jiyaData';
           <p style="font-size: 22px; font-weight: 700; color: #333; margin-top: 0;">Find Our Workshop &amp; Sales Center in GIDC Vapi</p>
         </div>
         <iframe 
-          style="border:0; width: 100%; height: 360px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.06);"
+          style="border:1px solid #e5e7eb; width: 100%; height: 360px; border-radius: 8px;"
           src="https://maps.google.com/maps?q=Nirmal+Shopping+Center,+GIDC+Phase+2,+Vapi,+Gujarat+396195&t=&z=15&ie=UTF8&iwloc=&output=embed"
           allowfullscreen="" 
           loading="lazy" 

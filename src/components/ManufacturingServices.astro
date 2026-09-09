@@ -42,9 +42,9 @@ const manufacturingItems = [
     <div class="row gy-4">
       {manufacturingItems.map((item) => (
         <div class="col-lg-4 col-md-6" data-aos="fade-up">
-          <div class="service-item position-relative text-center p-4" style="border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); background: #ffffff; transition: transform 0.3s ease, box-shadow 0.3s ease; border-bottom: 6px solid var(--accent-color); height: 100%;">
+          <div class="service-item position-relative text-center p-4" style="border-radius: 15px; background: #ffffff; border: 1px solid #e5e7eb; border-bottom: 6px solid var(--accent-color); height: 100%;">
             
-            <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; padding: 10px; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.06);">
+            <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; padding: 10px; background: #fff; border: 1px solid #f0f0f0;">
               <img 
                 src={item.image} 
                 alt={item.title} 
@@ -63,10 +63,3 @@ const manufacturingItems = [
     </div>
   </div>
 </section>
-
-<style>
-  .service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.15) !important;
-  }
-</style>

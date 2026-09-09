@@ -663,7 +663,6 @@ h6 {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  box-shadow: 0 4px 14px rgba(255, 106, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -678,7 +677,6 @@ h6 {
 
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  transform: scale(1.1);
   color: var(--contrast-color);
 }
 
@@ -700,18 +698,15 @@ h6 {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  box-shadow: 0 4px 14px rgba(13, 110, 253, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: background-color 0.3s ease;
   text-decoration: none;
 }
 
 .call-float:hover {
   background-color: #0b5ed7;
-  transform: scale(1.12);
-  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.6);
   color: #ffffff !important;
 }
 
@@ -734,19 +729,15 @@ h6 {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: background-color 0.3s ease;
   text-decoration: none;
-  animation: waPulse 2.5s infinite;
 }
 
 .whatsapp-float:hover {
   background-color: #20ba5a;
-  transform: scale(1.12);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.65);
   color: #ffffff !important;
 }
 
@@ -754,18 +745,6 @@ h6 {
   width: 26px;
   height: 26px;
   fill: #ffffff;
-}
-
-@keyframes waPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
 }
 
 /*--------------------------------------------------------------
@@ -2587,3 +2566,48 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+/*--------------------------------------------------------------
+# Global Reset: Disable All Box Shadows & Hover Movement
+--------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.service-item,
+.product-card,
+.card,
+.icon-box,
+.testimonial-item,
+.info-item,
+.team-member,
+.btn,
+a,
+img,
+button,
+.scroll-top,
+.call-float,
+.whatsapp-float {
+  box-shadow: none !important;
+}
+
+.service-item:hover,
+.product-card:hover,
+.card:hover,
+.icon-box:hover,
+.testimonial-item:hover,
+.info-item:hover,
+.team-member:hover,
+.btn:hover,
+a:hover,
+img:hover,
+button:hover,
+.scroll-top:hover,
+.call-float:hover,
+.whatsapp-float:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
