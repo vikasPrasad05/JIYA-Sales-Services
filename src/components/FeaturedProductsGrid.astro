@@ -1,75 +1,187 @@
 ---
 import { PRODUCTS } from '../data/jiyaData';
 
-// Featured products showcasing top items across categories including Material Handling, Caster Wheels, and Trolleys
+// Featured products showcasing top items in a smooth touch carousel slider
 const featuredIds = [
-  'mh-jss-1',       // Hand Pallet Truck-550
-  'cw-jss-1-4mm',   // 4MM PU Heavy Duty Caster Wheel
-  'mh-jss-7',       // Manual Hydraulic Stacker
-  'tc-jss-4',       // MS Platform Trolley
-  'cw-jss-5-brake', // PU Wheel Brake Type Caster
-  'mh-jss-11',      // Drum Lifter & Tilter Stacker
-  'tc-jss-6',       // Floor Crane
-  'mh-jss-4'        // SS Hand Pallet Truck (Grade 304)
+  'mh-jss-4',         // SS Hand Pallet Truck (clean PNG)
+  'cw-jss-2-fab',     // Fabricated Caster (clean PNG)
+  'tc-jss-5',         // Drum Handling Pallet (clean PNG)
+  'tc-jss-1',         // Goods Mesh Trolley (clean PNG)
+  'cw-jss-10-med',    // Medical Caster Wheel (clean PNG)
+  'tc-jss-6',         // Workshop Floor Crane (clean PNG)
+  'tc-jss-10-ss-sci', // SS Hydraulic Scissor (clean PNG)
+  'cw-jss-1-spring',  // Spring Loaded Caster (clean PNG)
+  'tc-jss-7',         // Dock Leveler Ramp (clean PNG)
+  'tc-jss-11-sct',    // Stair Climbing Trolley (clean PNG)
+  'tc-jss-9-ss-plat', // SS Platform Trolley (clean PNG)
+  'cw-jss-9-ss304'    // SS 304 Caster Wheel (clean PNG)
 ];
 
 const selectedProducts = featuredIds
   .map(id => PRODUCTS.find(p => p.id === id))
   .filter((p): p is typeof PRODUCTS[0] => Boolean(p));
 
-const featuredProducts = selectedProducts.length >= 8 
-  ? selectedProducts 
-  : [...selectedProducts, ...PRODUCTS.filter(p => p.isPopular && !selectedProducts.some(sp => sp.id === p.id))].slice(0, 8);
+const featuredProducts = selectedProducts.length > 0 ? selectedProducts : PRODUCTS.slice(0, 12);
 ---
 
-<section id="featured-products" class="portfolio section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Products</h2>
-    <p>Featured Products</p>
+<section id="featured-products" class="portfolio section" style="padding: 60px 0; background: #fafaf9;">
+  
+  <!-- Title Section matching JK Caster layout -->
+  <div class="container section-title text-start mb-4" data-aos="fade-up">
+    <div class="d-flex align-items-center mb-2">
+      <span class="text-uppercase fw-bold me-3" style="font-size: 13px; letter-spacing: 2px; color: #64748b;">PRODUCTS</span>
+      <div style="height: 2px; width: 65px; background-color: var(--accent-color, #ff6a00); border-radius: 2px;"></div>
+    </div>
+    <h2 style="font-size: 28px; font-weight: 800; color: #0f172a; text-transform: uppercase; margin: 0; letter-spacing: -0.5px;">
+      FEATURED PRODUCTS
+    </h2>
   </div>
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4">
-      {featuredProducts.map((product) => (
-        <div class="col-lg-3 col-md-6 portfolio-item">
-          <div class="product-card" onclick={`window.location.href='/products?search=${encodeURIComponent(product.name)}'`} style="cursor: pointer; border: 1px solid #e5e7eb; border-radius: 8px;">
-            <div class="img-wrapper d-block">
+  <!-- Carousel Slider Container -->
+  <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper featured-swiper pb-4">
+      <div class="swiper-wrapper">
+        {featuredProducts.map((product) => (
+          <div class="swiper-slide">
+            <div 
+              class="featured-product-image-slide position-relative d-flex align-items-center justify-content-center p-3" 
+              onclick={`window.location.href='/products?search=${encodeURIComponent(product.name)}'`}
+              title={product.name}
+              style="cursor: pointer; height: 260px; width: 100%; transition: transform 0.3s ease;"
+            >
+              <img 
+                src="/images/logo.png" 
+                alt="JIYA Sales & Services Logo" 
+                class="position-absolute brand-seal-logo" 
+                style="top: 8px; right: 8px; width: 34px; height: 34px; object-fit: contain; z-index: 2; pointer-events: none;" 
+              />
               <img 
                 src={product.image} 
                 alt={product.name} 
                 class="img-fluid"
                 onerror="this.onerror=null; this.src='/images/logo.png'"
-                style="width: 100%; height: 240px; object-fit: contain; background: #ffffff; padding: 12px;"
+                style="max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.4s ease;"
               />
             </div>
-            <div class="content-wrapper">
-              <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #333; line-height: 1.3;">
-                {product.name}
-              </h4>
-              {product.loadCapacity && (
-                <div style="font-size: 12px; color: #777; margin-bottom: 12px;">
-                  Capacity: <strong style="color: var(--accent-color);">{product.loadCapacity}</strong>
-                </div>
-              )}
-              <a 
-                href={`/products?search=${encodeURIComponent(product.name)}`} 
-                class="btn btn-sm" 
-                style="background-color: var(--accent-color); color: #fff; font-weight: 600; padding: 6px 14px; border-radius: 4px;"
-                onclick="event.stopPropagation();"
-              >
-                View Details
-              </a>
-            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      <!-- Pagination Dots matching JK Caster -->
+      <div class="swiper-pagination featured-pagination mt-4 position-relative"></div>
     </div>
 
     <!-- View All CTA -->
-    <div class="text-center mt-5">
-      <a href="/products" class="btn" style="background: var(--accent-color); color: #fff; padding: 12px 35px; border-radius: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+    <div class="text-center mt-3">
+      <a href="/products" class="btn" style="background: var(--accent-color); color: #fff; padding: 10px 28px; border-radius: 6px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; max-width: 100%; display: inline-flex; align-items: center; justify-content: center;">
         View All 140+ Products <i class="bi bi-arrow-right ms-2"></i>
       </a>
     </div>
   </div>
+
 </section>
+
+<style>
+  .featured-product-image-slide:hover img {
+    transform: scale(1.08);
+  }
+
+  .featured-pagination {
+    bottom: 0 !important;
+  }
+
+  .featured-pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: #cbd5e1;
+    opacity: 1;
+    transition: all 0.3s ease;
+    margin: 0 4px !important;
+  }
+
+  .featured-pagination .swiper-pagination-bullet-active {
+    background: var(--accent-color, #ff6a00) !important;
+    width: 26px;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 768px) {
+    #featured-products {
+      padding: 30px 0 !important;
+    }
+
+    .featured-product-image-slide {
+      height: 140px !important;
+      padding: 6px !important;
+    }
+
+    .brand-seal-logo {
+      width: 20px !important;
+      height: 20px !important;
+      top: 4px !important;
+      right: 4px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .featured-product-image-slide {
+      height: 120px !important;
+      padding: 4px !important;
+    }
+
+    .brand-seal-logo {
+      width: 16px !important;
+      height: 16px !important;
+      top: 2px !important;
+      right: 2px !important;
+    }
+  }
+</style>
+
+<script is:inline>
+  function initFeaturedSwiper() {
+    if (typeof Swiper !== 'undefined') {
+      new Swiper('.featured-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        slidesPerGroup: 1,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.featured-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 3,
+            spaceBetween: 8,
+          },
+          576: {
+            slidesPerView: 3,
+            spaceBetween: 12,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 18,
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+          },
+        },
+      });
+    } else {
+      setTimeout(initFeaturedSwiper, 150);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFeaturedSwiper);
+  } else {
+    initFeaturedSwiper();
+  }
+</script>

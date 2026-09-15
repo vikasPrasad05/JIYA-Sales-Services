@@ -42,7 +42,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     id: "material-handling",
     title: "Material Handling Equipments",
     description: "Hand Pallet Trucks (550mm/685mm, SS 304, Weighing, Scissor), Hydraulic Stackers (Manual, Semi/Fully Electric), Reel Stackers & Scissor Tables.",
-    image: "/images/products/hpt_yellow_550_clean.png",
+    image: "/images/products/16.jpeg",
     itemCount: 16
   },
   {
@@ -56,14 +56,14 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     id: "electric-stacker-parts",
     title: "Fully Electric Stacker Spare Parts",
     description: "OEM electronic components & drive spares for electric stackers: Curtis Controllers, Electronic Throttles, EM Brakes, Encoders, DC Contactors & Battery Connectors.",
-    image: "/images/products/hydraulic_stacker_yellow.png",
+    image: "/images/products/8.jpeg",
     itemCount: 12
   },
   {
     id: "forklift-parts",
     title: "Forklift Spare Parts & Safety Accessories",
     description: "Forklift safety equipment & replacement parts: Biometric Access Control, Strobe Beacons, Red/Blue Safety Spotlights, Wireless Fork Cameras, Solid Tires & Fork Tines.",
-    image: "/images/products/hpt_yellow_550_clean.png",
+    image: "/images/products/caster_black_pu.png",
     itemCount: 14
   },
   {
@@ -77,7 +77,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     id: "caster-wheels",
     title: "All Types of Industrial Caster Wheels",
     description: "4mm & 3mm PU Casters, Fabricated Forged Steel Casters, Medical & Chair Casters, Scaffolding, Spring Loaded & SS 304 Casters.",
-    image: "/images/products/pu_caster_wheel_red.png",
+    image: "/images/products/caster_4mm_pu_red.png",
     itemCount: 32
   },
   {
@@ -886,18 +886,6 @@ export const PRODUCTS: Product[] = [
   // ==========================================
   // SHEET 5: INDUSTRIAL WHEELS & OEM SPARES
   // ==========================================
-  {
-    id: "ws-jss-1-pp",
-    model: "JSS-1",
-    name: "Black PP Wheel",
-    category: "industrial-wheels-spares",
-    description: "Solid heavy-duty black polypropylene wheel with roller bearing bore.",
-    loadCapacity: "400 to 3000 kg",
-    sizes: ["4\" To 14\" Diameter"],
-    features: ["High Impact PP Material", "Chemical Resistant", "Roller Bearing Bore"],
-    applications: ["Waste Carts", "Industrial Trolleys"],
-    image: "/images/products/32.jpeg"
-  },
   {
     id: "ws-jss-2-puhpt",
     model: "JSS-2",

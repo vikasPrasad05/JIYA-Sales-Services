@@ -36,6 +36,9 @@ const { title, description } = Astro.props;
     <!-- AOS (Animate On Scroll) CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+    <!-- Swiper 11 Touch Slider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
     <SEOHead title={title} description={description} />
   </head>
   <body class="index-page">
@@ -85,6 +88,9 @@ const { title, description } = Astro.props;
     <!-- AOS (Animate On Scroll) JS -->
     <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
+    <!-- Swiper 11 Touch Slider JS -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- Global Interactions matching Sailor/JKCaster -->
     <script is:inline>
       (function() {
@@ -125,6 +131,16 @@ const { title, description } = Astro.props;
         }
         if (mobileNavToggleBtn) {
           mobileNavToggleBtn.addEventListener('click', toggleMobileNav);
+        }
+
+        // Close mobile nav on backdrop click
+        const navMenuEl = document.querySelector('#navmenu');
+        if (navMenuEl) {
+          navMenuEl.addEventListener('click', (e) => {
+            if (e.target === navMenuEl && document.querySelector('body').classList.contains('mobile-nav-active')) {
+              toggleMobileNav();
+            }
+          });
         }
 
         // Close mobile nav on link click

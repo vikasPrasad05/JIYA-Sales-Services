@@ -465,12 +465,13 @@ body {
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: var(--heading-color, #0f172a);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    z-index: 9999;
   }
 
   .navmenu {
@@ -485,7 +486,7 @@ body {
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
     margin: 0;
-    border-radius: 6px;
+    border-radius: 12px;
     background-color: var(--nav-mobile-background-color);
     overflow-y: auto;
     transition: 0.3s;
@@ -496,7 +497,7 @@ body {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-dropdown-color);
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-family: var(--nav-font);
     font-size: 17px;
     font-weight: 500;
@@ -505,6 +506,11 @@ body {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navmenu ul li:last-child a {
+    border-bottom: none;
   }
 
   .navmenu a i,
@@ -531,7 +537,8 @@ body {
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-dropdown-hover-color);
+    color: var(--accent-color, #ff6a00);
+    background-color: rgba(255, 106, 0, 0.06);
   }
 
   .navmenu .active i,
@@ -562,30 +569,54 @@ body {
     background-color: rgba(33, 37, 41, 0.03);
   }
 
-  .mobile-nav-active {
-    overflow: hidden;
+  body.mobile-nav-active {
+    overflow: hidden !important;
   }
 
-  .mobile-nav-active .mobile-nav-toggle {
-    color: #fff;
-    position: absolute;
-    font-size: 32px;
-    top: 15px;
-    right: 15px;
-    margin-right: 0;
-    z-index: 9999;
+  body.mobile-nav-active .header {
+    z-index: 999999 !important;
+    transform: none !important;
+    -webkit-transform: none !important;
   }
 
-  .mobile-nav-active .navmenu {
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    background: rgba(33, 37, 41, 0.8);
-    transition: 0.3s;
+  body.mobile-nav-active .mobile-nav-toggle {
+    color: #ffffff !important;
+    position: fixed !important;
+    font-size: 32px !important;
+    top: 18px !important;
+    right: 20px !important;
+    margin-right: 0 !important;
+    z-index: 1000000 !important;
   }
 
-  .mobile-nav-active .navmenu>ul {
-    display: block;
+  body.mobile-nav-active .navmenu {
+    position: fixed !important;
+    overflow: hidden !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    transition: 0.3s !important;
+    z-index: 999998 !important;
+  }
+
+  body.mobile-nav-active .navmenu > ul {
+    display: block !important;
+    position: fixed !important;
+    top: 76px !important;
+    left: 16px !important;
+    right: 16px !important;
+    bottom: auto !important;
+    max-height: calc(100vh - 100px) !important;
+    background-color: #ffffff !important;
+    padding: 12px 0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.4) !important;
+    overflow-y: auto !important;
+    z-index: 999999 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
   }
 }
 

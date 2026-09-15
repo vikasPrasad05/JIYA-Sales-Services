@@ -38,7 +38,7 @@ PRODUCTS.forEach(p => {
               type="text" 
               id="productSearch" 
               class="form-control" 
-              placeholder="Search by Product Name, Model (e.g. Pallet Truck, Stacker, Casters)..." 
+              placeholder="Search products..." 
               style="border-radius: 30px; padding: 12px 25px; padding-right: 50px; border: 2px solid #e2e8f0; font-size: 15px;"
             />
             <i class="bi bi-search position-absolute" style="right: 22px; top: 14px; color: #888; font-size: 18px;"></i>
@@ -88,16 +88,15 @@ PRODUCTS.forEach(p => {
                     onerror="this.onerror=null; this.src='/images/logo.png'"
                     style="width: 100%; height: 230px; object-fit: contain; padding: 15px;"
                   />
-                  {product.isPopular && (
-                    <span class="badge position-absolute" style="top: 10px; right: 10px; background: var(--accent-color); font-size: 11px; padding: 5px 9px; font-weight: 600;">
-                      Popular
-                    </span>
-                  )}
-                  {product.model && (
-                    <span class="badge position-absolute bg-dark text-light" style="top: 10px; left: 10px; font-size: 11px; padding: 4px 8px; opacity: 0.85;">
-                      {product.model}
-                    </span>
-                  )}
+                  <span class="badge position-absolute bg-dark text-light model-badge" style="top: 10px; left: 10px; font-size: 11px; padding: 4px 8px; opacity: 0.85;">
+                    {product.model || 'JSS-1'}
+                  </span>
+                  <img 
+                    src="/images/logo.png" 
+                    alt="JIYA Sales & Services Logo" 
+                    class="position-absolute brand-seal-logo" 
+                    style="top: 8px; right: 8px; width: 34px; height: 34px; object-fit: contain; z-index: 2; pointer-events: none;" 
+                  />
                 </div>
 
                 <div class="content-wrapper p-3 d-flex flex-column flex-grow-1">
@@ -111,24 +110,14 @@ PRODUCTS.forEach(p => {
                     </div>
                   )}
 
-                  <div class="mt-auto pt-2 d-flex justify-content-between align-items-center product-card-actions">
+                  <div class="mt-auto pt-2 product-card-actions">
                     <button 
                       type="button" 
-                      class="btn btn-sm btn-open-modal"
-                      style="background-color: var(--accent-color); color: #fff; font-weight: 600; padding: 6px 14px; border-radius: 4px;"
+                      class="btn btn-sm btn-open-modal w-100"
+                      style="background-color: var(--accent-color); color: #fff; font-weight: 600; padding: 7px 14px; border-radius: 4px;"
                     >
                       View Details
                     </button>
-                    
-                    <a 
-                      href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=Hello%20JIYA,%20I%20want%20to%20inquire%20about:%20${encodeURIComponent(product.name)}%20(Model:%20${encodeURIComponent(product.model || 'N/A')})`}
-                      target="_blank"
-                      class="btn btn-sm text-success p-1 px-2"
-                      title="Quick WhatsApp Inquiry"
-                      style="background: #e8f5e9; border-radius: 4px;"
-                    >
-                      <i class="bi bi-whatsapp"></i>
-                    </a>
                   </div>
                 </div>
 
@@ -247,6 +236,14 @@ PRODUCTS.forEach(p => {
         if (matchesCat && matchesSearch) {
           item.style.display = 'block';
           visibleCount++;
+
+          // Dynamic Model Numbering: JSS-1, JSS-2, JSS-3 ... sequentially for visible items in active filter/category
+          const dynamicModel = `JSS-${visibleCount}`;
+          const modelBadge = item.querySelector('.model-badge');
+          if (modelBadge) {
+            modelBadge.textContent = dynamicModel;
+          }
+          item.setAttribute('data-current-model', dynamicModel);
         } else {
           item.style.display = 'none';
         }
@@ -306,13 +303,14 @@ PRODUCTS.forEach(p => {
           const col = btn.closest('.product-card-col');
           if (!col) return;
           const productData = JSON.parse(col.getAttribute('data-product') || '{}');
+          const dynamicModel = col.getAttribute('data-current-model') || productData.model || 'JSS-1';
 
           document.getElementById('modalTitle').textContent = productData.name || '';
           document.getElementById('modalCategoryBadge').textContent = productData.category || 'Product';
           document.getElementById('modalDescription').textContent = productData.description || '';
           document.getElementById('modalImage').src = productData.image || '/images/logo.png';
           
-          document.getElementById('modalModel').textContent = productData.model || 'Standard';
+          document.getElementById('modalModel').textContent = dynamicModel;
           document.getElementById('modalCapacity').textContent = productData.loadCapacity || 'Industrial Standard';
           
           const sizeRow = document.getElementById('modalSizesRow');
@@ -337,7 +335,7 @@ PRODUCTS.forEach(p => {
             featuresList.appendChild(li);
           }
 
-          const whatsappUrl = `https://wa.me/919909468007?text=Hello%20JIYA%20Sales,%20I%20want%20to%20inquire%20about%20${encodeURIComponent(productData.name)}%20(Model:%20${encodeURIComponent(productData.model || 'N/A')})`;
+          const whatsappUrl = `https://wa.me/919909468007?text=Hello%20JIYA%20Sales,%20I%20want%20to%20inquire%20about%20${encodeURIComponent(productData.name)}%20(Model:%20${encodeURIComponent(dynamicModel)})`;
           document.getElementById('modalWhatsAppBtn').href = whatsappUrl;
 
           modal.show();

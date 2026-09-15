@@ -27,5 +27,56 @@
     font-family: 'Outfit', 'Inter', sans-serif;
     letter-spacing: -0.02em;
   }
+
+  /* Universal single-line button rule: no button text breaks into 2 lines on any screen */
+  .btn,
+  button,
+  a.btn,
+  .btn-getstarted,
+  .btn-get-started,
+  .btn-sm,
+  .btn-outline-dark,
+  .btn-outline-secondary {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    text-overflow: ellipsis;
+  }
 }
+
+/* Mobile responsive scaling */
+@media (max-width: 576px) {
+  html {
+    font-size: 14.5px;
+  }
+
+  h1 {
+    font-size: clamp(22px, 6vw, 32px) !important;
+  }
+
+  h2 {
+    font-size: clamp(18px, 5vw, 26px) !important;
+  }
+
+  .btn, a.btn {
+    font-size: clamp(11px, 3.2vw, 14px) !important;
+    padding: clamp(6px, 1.8vw, 10px) clamp(12px, 3.5vw, 20px) !important;
+  }
+
+  .btn-sm {
+    font-size: clamp(11px, 3vw, 13px) !important;
+    padding: clamp(5px, 1.5vw, 8px) clamp(10px, 3vw, 14px) !important;
+  }
+}
+
+/* Mobile view layout reordering: Show Featured Products slider at top on mobile (< 768px) */
+@media (max-width: 768px) {
+  body.index-page main {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  body.index-page #featured-products {
+    order: -1 !important;
+  }
+}
+
 
