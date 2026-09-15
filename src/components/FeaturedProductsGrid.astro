@@ -111,29 +111,29 @@ const featuredProducts = selectedProducts.length > 0 ? selectedProducts : PRODUC
     }
 
     .featured-product-image-slide {
-      height: 140px !important;
-      padding: 6px !important;
+      height: 200px !important;
+      padding: 8px !important;
     }
 
     .brand-seal-logo {
-      width: 20px !important;
-      height: 20px !important;
-      top: 4px !important;
-      right: 4px !important;
+      width: 26px !important;
+      height: 26px !important;
+      top: 6px !important;
+      right: 6px !important;
     }
   }
 
   @media (max-width: 480px) {
     .featured-product-image-slide {
-      height: 120px !important;
-      padding: 4px !important;
+      height: 180px !important;
+      padding: 6px !important;
     }
 
     .brand-seal-logo {
-      width: 16px !important;
-      height: 16px !important;
-      top: 2px !important;
-      right: 2px !important;
+      width: 22px !important;
+      height: 22px !important;
+      top: 4px !important;
+      right: 4px !important;
     }
   }
 </style>
@@ -143,7 +143,7 @@ const featuredProducts = selectedProducts.length > 0 ? selectedProducts : PRODUC
     if (typeof Swiper !== 'undefined') {
       new Swiper('.featured-swiper', {
         slidesPerView: 3,
-        spaceBetween: 10,
+        spaceBetween: 12,
         slidesPerGroup: 1,
         loop: true,
         grabCursor: true,
@@ -157,12 +157,12 @@ const featuredProducts = selectedProducts.length > 0 ? selectedProducts : PRODUC
         },
         breakpoints: {
           320: {
-            slidesPerView: 3,
-            spaceBetween: 8,
+            slidesPerView: 2,
+            spaceBetween: 10,
           },
           576: {
-            slidesPerView: 3,
-            spaceBetween: 12,
+            slidesPerView: 2,
+            spaceBetween: 14,
           },
           768: {
             slidesPerView: 3,
