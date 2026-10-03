@@ -9,12 +9,19 @@
       
       <!-- Left Image with 100% Satisfaction Badge -->
       <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-        <div class="position-relative">
+        <div class="position-relative why-image-card" style="border: 2px solid #e5e7eb; border-radius: 10px; background: #fff; padding: 12px;">
+          <!-- Brand Logo in Top-Right Corner -->
+          <img 
+            src="/images/logo.png" 
+            alt="JIYA Sales & Services Logo" 
+            class="position-absolute brand-card-logo" 
+            style="top: 14px; right: 14px; width: 44px; height: 44px; object-fit: contain; z-index: 2; pointer-events: none;" 
+          />
           <img 
             src="/images/products/hydraulic_stacker_yellow.png" 
             class="img-fluid rounded" 
             alt="Why Choose JIYA Industrial" 
-            style="border: 2px solid #e5e7eb; background: #fff; width: 100%; height: 400px; object-fit: contain;"
+            style="background: #fff; width: 100%; height: 400px; object-fit: contain;"
           />
           <div class="position-absolute" style="bottom: -20px; left: -20px; background: var(--accent-color); color: #fff; padding: 20px; border-radius: 10px;">
             <h3 style="font-size: 36px; font-weight: 800; margin: 0; line-height: 1;">100%</h3>
@@ -63,3 +70,26 @@
     </div>
   </div>
 </section>
+
+<style>
+  .brand-card-logo {
+    width: 44px;
+    height: 44px;
+    top: 14px;
+    right: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .why-image-card:hover .brand-card-logo {
+    transform: scale(1.08);
+  }
+
+  @media (max-width: 768px) {
+    .brand-card-logo {
+      width: 34px !important;
+      height: 34px !important;
+      top: 10px !important;
+      right: 10px !important;
+    }
+  }
+</style>

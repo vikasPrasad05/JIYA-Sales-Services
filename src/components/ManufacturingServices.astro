@@ -6,7 +6,7 @@ const manufacturingItems = [
     link: "/services"
   },
   {
-    title: "PLATEFORM TROLLEY",
+    title: "PLATFORM TROLLEY",
     image: "/images/products/ss_platform_trolley.png",
     link: "/services"
   },
@@ -44,6 +44,14 @@ const manufacturingItems = [
         <div class="col-lg-4 col-md-6" data-aos="fade-up">
           <div class="service-item position-relative text-center p-4" style="border-radius: 15px; background: #ffffff; border: 1px solid #e5e7eb; border-bottom: 6px solid var(--accent-color); height: 100%;">
             
+            <!-- Brand Logo in Top-Right Corner -->
+            <img 
+              src="/images/logo.png" 
+              alt="JIYA Sales & Services Logo" 
+              class="position-absolute brand-card-logo" 
+              style="top: 14px; right: 14px; width: 38px; height: 38px; object-fit: contain; z-index: 2; pointer-events: none;" 
+            />
+
             <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; padding: 10px; background: #fff; border: 1px solid #f0f0f0;">
               <img 
                 src={item.image} 
@@ -63,3 +71,26 @@ const manufacturingItems = [
     </div>
   </div>
 </section>
+
+<style>
+  .brand-card-logo {
+    width: 38px;
+    height: 38px;
+    top: 14px;
+    right: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .service-item:hover .brand-card-logo {
+    transform: scale(1.08);
+  }
+
+  @media (max-width: 768px) {
+    .brand-card-logo {
+      width: 32px !important;
+      height: 32px !important;
+      top: 12px !important;
+      right: 12px !important;
+    }
+  }
+</style>

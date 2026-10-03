@@ -8,7 +8,14 @@ import { COMPANY_INFO } from '../data/jiyaData';
 
       <!-- Left: Image & Numbering Badge -->
       <div class="col-lg-6 position-relative">
-        <div class="position-relative p-3" style="border: 2px solid var(--accent-color); border-radius: 10px; background: #fff;">
+        <div class="position-relative p-3 about-image-card" style="border: 2px solid var(--accent-color); border-radius: 10px; background: #fff;">
+          <!-- Brand Logo in Top-Right Corner -->
+          <img 
+            src="/images/logo.png" 
+            alt="JIYA Sales & Services Logo" 
+            class="position-absolute brand-card-logo" 
+            style="top: 14px; right: 14px; width: 44px; height: 44px; object-fit: contain; z-index: 2; pointer-events: none;" 
+          />
           <img 
             src="/images/products/ss_hpt_silver.png" 
             class="img-fluid rounded" 
@@ -67,3 +74,26 @@ import { COMPANY_INFO } from '../data/jiyaData';
     </div>
   </div>
 </section>
+
+<style>
+  .brand-card-logo {
+    width: 44px;
+    height: 44px;
+    top: 14px;
+    right: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .about-image-card:hover .brand-card-logo {
+    transform: scale(1.08);
+  }
+
+  @media (max-width: 768px) {
+    .brand-card-logo {
+      width: 34px !important;
+      height: 34px !important;
+      top: 10px !important;
+      right: 10px !important;
+    }
+  }
+</style>
